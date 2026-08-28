@@ -34,6 +34,36 @@ footer {
   gap: 10px;
 }
 
+/* Logos de redes — el color lo pone el <path> vía currentColor, así que un
+   solo bloque sirve para los cuatro iconos. Ver data/socials.ts. */
+.foot-social {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.foot-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--text-500);
+  transition: color 0.18s ease, background 0.18s ease;
+}
+.foot-social a:hover {
+  color: var(--accent);
+  background: var(--line-soft);
+}
+.foot-social svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
 @media (max-width: 860px) {
   .foot-grid { grid-template-columns: 1fr 1fr; }
 }

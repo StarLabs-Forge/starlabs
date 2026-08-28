@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { services } from "../../data/services";
+import { socials } from "../../data/socials";
 import "./Footer.css";
 
 export function Footer() {
@@ -31,6 +32,23 @@ export function Footer() {
         </div>
         <div className="foot-bottom">
           <span>© 2026 STARLABS.dev</span>
+          <ul className="foot-social">
+            {socials.map((social) => (
+              <li key={social.id}>
+                <a
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${social.name} — ${social.handle}`}
+                  title={social.handle}
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d={social.icon} />
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </footer>
