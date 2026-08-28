@@ -1,0 +1,67 @@
+/* ============================================
+   IDENTITY — Sobre (Home)
+   ============================================ */
+.about-lead {
+  border-left: 2px solid var(--accent-dim);
+  padding-left: 22px;
+  margin-bottom: 52px;
+  max-width: 66ch;
+}
+.about-lead p {
+  color: var(--text-300);
+  font-size: 15.5px;
+  line-height: 1.75;
+}
+
+/* process steps (real sequence: architecture -> mvp -> production).
+   Ghost numeral + alternating surface + connector arrow read as a pipeline
+   instead of three identical boxes in a row — same tokens, no new color. */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line-soft);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.step { position: relative; background: var(--bg-950); padding: 38px 28px 30px; }
+.step:nth-child(2) { background: var(--bg-900); }
+.step .num {
+  display: block;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 3.1rem;
+  line-height: 1;
+  color: var(--text-100);
+  opacity: 0.06;
+  margin-bottom: -8px;
+}
+.step h3 { position: relative; font-size: 1.05rem; margin: 12px 0 10px; }
+.step p { position: relative; color: var(--text-500); font-size: 14px; }
+.step:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  top: 44px;
+  right: -11px;
+  z-index: 3;
+  font-family: var(--mono);
+  font-size: 15px;
+  color: var(--text-600);
+  background: var(--bg-950);
+  pointer-events: none;
+}
+.step-kicker {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+@media (max-width: 860px) {
+  .steps { grid-template-columns: 1fr; }
+  .step:not(:last-child)::after { content: none; }
+}

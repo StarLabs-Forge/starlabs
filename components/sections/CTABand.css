@@ -1,0 +1,28 @@
+/* ============================================
+   CTA BAND — reuses the same gridline trick as .hero::before / .gridlines,
+   masked to a soft ellipse so the close of the page still reads as an
+   open, uncluttered beat after the denser sections above it.
+   ============================================ */
+.ctaband {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  text-align: center;
+  padding: 96px 0;
+}
+.ctaband::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(199, 206, 222, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(199, 206, 222, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(ellipse 55% 100% at 50% 50%, black 0%, transparent 75%);
+  mask-image: radial-gradient(ellipse 55% 100% at 50% 50%, black 0%, transparent 75%);
+  pointer-events: none;
+}
+.ctaband .wrap { position: relative; z-index: 1; }
+.ctaband h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); max-width: 20ch; margin: 0 auto 14px; }
+.ctaband p { color: var(--text-500); max-width: 46ch; margin: 0 auto 30px; }

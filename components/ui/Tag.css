@@ -1,0 +1,14 @@
+/* ============================================
+   TAG — .tag.on / .tag.beta
+   ============================================ */
+.tag {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  color: var(--text-500);
+}
+.tag.on { color: var(--ok); border-color: rgba(126,168,136,0.35); }
+.tag.beta { color: var(--accent); border-color: rgba(32,217,255,0.35); }

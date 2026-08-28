@@ -1,0 +1,126 @@
+/* ============================================
+   NAV
+   ============================================ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(5, 8, 22, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line-soft);
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.nav.scrolled {
+  background: rgba(5, 8, 22, 0.96);
+  border-bottom-color: var(--line);
+}
+.nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.logo {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.logo .mark {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+  animation: logoIn 0.9s var(--ease-out) both;
+}
+@keyframes logoIn {
+  from { opacity: 0; transform: scale(0.7) rotate(-14deg); }
+  to { opacity: 1; transform: none; }
+}
+.logo .wordmark {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.logo span.sub { color: var(--text-500); font-weight: 400; }
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  font-size: 13.5px;
+}
+.navlinks a:not(.btn) {
+  position: relative;
+  color: var(--text-300);
+  transition: color 0.2s var(--ease-out);
+}
+.navlinks a:not(.btn)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -4px;
+  height: 1px;
+  background: var(--accent);
+  transition: right 0.25s var(--ease-out);
+}
+.navlinks a:not(.btn):hover::after,
+.navlinks a[aria-current="page"]:not(.btn)::after { right: 0; }
+.navlinks a:hover, .navlinks a[aria-current="page"] { color: var(--text-100); }
+.navlinks a[aria-current="page"] { color: var(--accent); }
+
+/* nav CTA: subtle gradient outline instead of a filled pill, so it reads
+   as an invite rather than competing with the hero's primary CTA. */
+.nav .btn {
+  color: var(--text-100);
+  background: linear-gradient(var(--bg-950), var(--bg-950)) padding-box,
+    var(--brand-gradient) border-box;
+  border: 1px solid transparent;
+}
+.nav .btn:hover { filter: brightness(1.2); }
+
+.navtoggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text-100);
+  width: 44px;
+  height: 44px;
+  font-family: var(--mono);
+}
+
+@media (max-width: 860px) {
+  .navtoggle { display: block; }
+
+  /* mobile nav drawer — kept in flow, animated via opacity/transform */
+  .navlinks {
+    display: flex;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--bg-900);
+    border-bottom: 1px solid var(--line-soft);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 24px;
+    gap: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.2s var(--ease), transform 0.2s var(--ease), visibility 0.2s;
+  }
+  .navlinks a:not(.btn) { padding: 10px 0; width: 100%; }
+  .navlinks .btn { margin-top: 8px; justify-content: center; }
+  .navlinks.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}

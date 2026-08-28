@@ -1,0 +1,172 @@
+/* ============================================
+   SERVICIOS — composición editorial con las 4 imágenes (1→Web, 2→Apps,
+   3→Sistemas, 4→Soluciones a medida). La imagen es el elemento visual
+   principal; el texto es secundario y corto.
+   ============================================ */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px 24px;
+  perspective: 1400px;
+}
+
+.service-card-slot {
+  opacity: 0;
+  transform: translateY(22px) scale(0.98);
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+}
+.services-grid.in .service-card-slot { opacity: 1; transform: none; }
+
+/* composición editorial: leve desfase vertical alternado, no cuatro
+   bloques idénticos en fila. */
+.service-card--a { transform: translateY(0); }
+.service-card--b { transform: translateY(22px); }
+@media (max-width: 860px) {
+  .service-card--a, .service-card--b { transform: none; }
+}
+
+.service-card {
+  --mx: 50%;
+  --my: 50%;
+  --rx: 0deg;
+  --ry: 0deg;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px 18px 20px;
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--bg-900), var(--bg-900)) padding-box,
+    linear-gradient(135deg, var(--line), var(--line)) border-box;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry));
+  transition: transform 0.3s var(--ease-out), background 0.5s var(--ease-in-out), box-shadow 0.4s var(--ease-out);
+}
+.service-card:hover {
+  transform: perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-6px) translateZ(8px);
+  background:
+    linear-gradient(var(--bg-900), var(--bg-900)) padding-box,
+    linear-gradient(135deg, #00c8ff, #1677ff, #7c3dff, #b43cff) border-box;
+  box-shadow: 0 28px 54px -30px rgba(0, 200, 255, 0.4);
+}
+.service-card:active { transform: perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-3px) scale(0.99); }
+
+/* luz radial que sigue al cursor — paleta STARLABS exclusivamente */
+.service-card-spotlight {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(240px circle at var(--mx) var(--my), rgba(0, 200, 255, 0.14), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.35s var(--ease-out);
+  pointer-events: none;
+  z-index: 0;
+}
+.service-card:hover .service-card-spotlight { opacity: 1; }
+
+.service-image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  aspect-ratio: 4 / 3;
+  transition: transform 0.4s var(--ease-out), filter 0.4s var(--ease-out);
+}
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* los assets 1–4 traen fondo negro sólido — screen lo funde con el fondo
+     oscuro de la tarjeta sin tocar el archivo ni sus colores originales. */
+  mix-blend-mode: screen;
+}
+.service-card:hover .service-image {
+  transform: scale(1.035) translateZ(10px);
+  filter: brightness(1.08) drop-shadow(0 0 22px rgba(32, 217, 255, 0.3));
+}
+
+.service-card-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.service-card-body h3 { font-size: 1.05rem; }
+.service-hook { color: var(--text-100); font-size: 14px; }
+.service-desc { color: var(--text-500); font-size: 13.5px; }
+
+.service-cta {
+  position: relative;
+  z-index: 1;
+  align-self: flex-end;
+  margin-top: 4px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-300);
+  transition: border-color 0.25s var(--ease-out), color 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out),
+    transform 0.2s var(--ease-out);
+}
+.service-cta .arrow { display: inline-block; transition: transform 0.25s var(--ease-out); }
+.service-card:hover .service-cta {
+  border-color: #1677ff;
+  color: var(--text-100);
+  box-shadow: 0 0 18px rgba(22, 119, 255, 0.4);
+  transform: scale(1.06);
+}
+.service-card:hover .service-cta .arrow { transform: translateX(2px); }
+.service-card:active .service-cta { transform: scale(0.94); }
+
+/* parallax de scroll extremadamente sutil — progressive enhancement,
+   navegadores sin animation-timeline simplemente no lo ejecutan. */
+@supports (animation-timeline: view()) {
+  .service-image {
+    animation: service-img-parallax linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+  @keyframes service-img-parallax {
+    from { transform: translateY(14px); }
+    to { transform: translateY(-8px); }
+  }
+}
+
+.services-followup {
+  margin-top: 72px;
+  padding-top: 36px;
+  border-top: 1px solid var(--line-soft);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.services-followup p { color: var(--text-500); font-size: 14px; }
+
+@media (max-width: 860px) {
+  .services-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+}
+
+@media (max-width: 560px) {
+  .services-grid { grid-template-columns: 1fr; gap: 20px; }
+  .service-image { aspect-ratio: 16 / 10; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .service-card:hover,
+  .service-card:active,
+  .service-image,
+  .service-card:hover .service-image,
+  .service-cta,
+  .service-card:hover .service-cta {
+    transform: none !important;
+  }
+  .service-card-spotlight { display: none; }
+}

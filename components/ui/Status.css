@@ -1,0 +1,70 @@
+/* ============================================
+   STATUS — .pulse-dot / .modstatus / .termpanel / .modrow
+   pulse-dot y modstatus.on comparten la animación "pulse".
+   ============================================ */
+.pulse-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ok);
+  box-shadow: 0 0 6px var(--ok);
+  animation: pulse 2s ease-in-out infinite;
+  vertical-align: middle;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+/* signature element: terminal / status panel */
+.termpanel {
+  background: var(--bg-900);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.termpanel-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-500);
+}
+.termpanel-head .tdot { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+.termpanel-body { padding: 4px 0; }
+.modrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--line-soft);
+  font-family: var(--mono);
+  font-size: 12.5px;
+}
+.modrow:last-child { border-bottom: none; }
+.modrow .modname { color: var(--text-100); }
+.modrow .moddesc { color: var(--text-500); font-family: var(--body); font-size: 13px; flex: 1; margin: 0 14px; }
+.modstatus {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+.modstatus.on { color: var(--ok); }
+.modstatus.beta { color: var(--accent); }
+.modstatus::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.modstatus.on::before { animation: pulse 2s ease-in-out infinite; }

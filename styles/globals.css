@@ -1,0 +1,163 @@
+/* ============================================
+   STARLABS — Global styles (Next.js)
+   Solo reglas verdaderamente globales: reset, tipografía base, layout
+   de secciones y utilidades compartidas por componentes no relacionados
+   entre sí (.idx, .section-deco, .gridlines...). El resto del CSS vive
+   junto a cada componente o página, en un archivo .css con el mismo
+   nombre (ej. components/layout/Navbar.css, app/contacto/page.css).
+   ============================================ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-950);
+  color: var(--text-100);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(32, 217, 255, 0.07), transparent 40%),
+    radial-gradient(circle at 85% 20%, rgba(118, 87, 255, 0.09), transparent 50%);
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--text-100);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+p.lead {
+  color: var(--text-300);
+  font-size: 1.05rem;
+  max-width: 56ch;
+}
+
+/* ============================================
+   SECTIONS — layout compartido por todas las <section> de las páginas
+   ============================================ */
+section { padding: 120px 0; }
+section.tight { padding: 88px 0; }
+.section-head { max-width: 640px; margin-bottom: 56px; }
+.section-head h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); margin-top: 14px; }
+/* wipe reveal — solo cuando Reveal está armado (clase .reveal presente);
+   sin JS/reduced-motion el título nunca queda recortado. */
+.section-head.reveal h2 {
+  clip-path: inset(0 100% -0.2em 0);
+  transition: clip-path 0.9s var(--ease-in-out) 0.1s;
+}
+.section-head.reveal.in h2 { clip-path: inset(0 0 -0.2em 0); }
+
+.idx {
+  display: block;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--text-600);
+  margin-bottom: 10px;
+}
+
+/* ============================================
+   SCROLL REVEAL (class added by JS only —
+   content is fully visible without it)
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px) scale(0.985);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+}
+.reveal.in { opacity: 1; transform: none; }
+
+/* ============================================
+   COMPOSITION / DEPTH — utilitarios de layering reutilizados
+   por varias secciones de distintas páginas. No agregan color ni motion
+   nuevos: reusan tokens y el patrón de grid que ya existía en
+   .hero::before. Ver /docs/DESIGN_SYSTEM.md sección 11.
+   ============================================ */
+.section-deco { position: relative; overflow: hidden; }
+.section-deco > .wrap { position: relative; z-index: 1; }
+
+.section-index {
+  position: absolute;
+  top: -0.05em;
+  right: max(0px, calc((100% - var(--maxw)) / 2 + 24px));
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(6rem, 13vw, 10.5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--text-100);
+  opacity: 0.045;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.gridlines { position: relative; }
+.gridlines::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(199, 206, 222, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(199, 206, 222, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  pointer-events: none;
+  z-index: 0;
+  animation: grid-drift 12s ease-in-out infinite;
+}
+@keyframes grid-drift {
+  0%, 100% { background-position: 0 0; opacity: 1; }
+  50% { background-position: 5px 5px; opacity: 0.85; }
+}
+
+/* ============================================
+   RESPONSIVE — solo lo genérico (secciones/utilidades de arriba).
+   Los breakpoints de cada componente viven en su propio archivo .css.
+   ============================================ */
+@media (max-width: 860px) {
+  .section-index { font-size: clamp(4rem, 18vw, 6rem); }
+}
+
+@media (max-width: 520px) {
+  section { padding: 80px 0; }
+  section.tight { padding: 64px 0; }
+  .section-index { display: none; }
+}

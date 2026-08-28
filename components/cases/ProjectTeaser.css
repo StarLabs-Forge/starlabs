@@ -1,0 +1,71 @@
+/* ============================================
+   PROJECT TEASER — Portafolio (teaser de Home): motivo QR + nombre +
+   descripción + categoría. Hover más marcado que el resto de tarjetas —
+   es la pieza que más invita a hacer clic ("PRUEBA" en el recorrido de
+   conversión).
+   ============================================ */
+.project-teaser {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--bg-900);
+  padding: 36px;
+  transform-style: preserve-3d;
+  transition: transform 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.project-teaser:hover {
+  border-color: var(--accent-strong);
+  transform: perspective(1100px) rotateX(2deg) rotateY(-2deg) translateY(-6px) translateZ(6px);
+  box-shadow: 0 34px 64px -28px rgba(40, 123, 255, 0.4);
+}
+.project-teaser-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  background: var(--bg-950);
+  transition: transform 0.4s var(--ease);
+}
+.project-teaser:hover .project-teaser-visual { transform: scale(1.06); }
+.qr-mark {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  width: 60%;
+}
+.qr-mark span { aspect-ratio: 1; border-radius: 1px; background: var(--line-soft); transition: background 0.4s var(--ease); }
+.qr-mark span.on { background: var(--accent); }
+.project-teaser:hover .qr-mark span.on { background: var(--blue); }
+.project-teaser-category {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-500);
+  margin-bottom: 8px;
+}
+.project-teaser-body h3 { font-size: 1.6rem; margin-bottom: 10px; }
+.project-teaser-body p { color: var(--text-300); font-size: 14.5px; max-width: 56ch; margin-bottom: 16px; }
+.project-teaser-status {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+  margin-bottom: 16px;
+}
+.project-teaser:hover .project-teaser-status { opacity: 1; transform: none; }
+
+@media (max-width: 860px) {
+  .project-teaser { grid-template-columns: 1fr; padding: 28px; }
+  .project-teaser-visual { max-width: 160px; margin: 0 auto; }
+}
