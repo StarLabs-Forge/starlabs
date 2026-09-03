@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import type { CaseStudy } from "../../data/caseStudies";
 import "./ProjectTeaser.css";
 
@@ -29,7 +29,7 @@ export function ProjectTeaser({ caseStudy }: { caseStudy: CaseStudy }) {
         <h3>{caseStudy.name}</h3>
         <p>{caseStudy.solution}</p>
         <span className="project-teaser-status">{caseStudy.statusLabel}</span>
-        <Link href="/portafolio" className="btn-ghost">
+        <Link to="/portafolio" className="btn-ghost">
           Ver proyecto <span className="arrow">→</span>
         </Link>
       </div>

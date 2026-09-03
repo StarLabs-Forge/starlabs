@@ -14,7 +14,7 @@ El proyecto se organiza en cuatro capas, de más concreta a más genérica:
 
 | Capa | Carpeta | Qué contiene | Se reutiliza |
 |---|---|---|---|
-| **Rutas** | `app/` | URLs, metadata, layout de Next | — |
+| **Rutas** | `App.tsx` | URLs y layout, con React Router | — |
 | **Vistas** | `views/` | La composición de cada página | No |
 | **Secciones** | `sections/` | Cada bloque de la web, con todo lo suyo | No |
 | **Componentes** | `components/` | Piezas que usan varias secciones | Sí |
@@ -36,20 +36,19 @@ sección lo necesite. Es mucho más fácil subir algo que bajarlo.
 ```
 nextjs-starlabs/
 │
-├── app/                          # RUTAS. Delgado: solo envuelve vistas.
-│   ├── layout.tsx
-│   ├── page.tsx                  # → <HomeView />
-│   ├── loading.tsx
-│   ├── not-found.tsx
-│   ├── servicios/page.tsx        # → <ServiciosView />
-│   ├── portafolio/page.tsx       # → <PortafolioView />
-│   └── contacto/page.tsx         # → <ContactoView />
+├── index.html                    # El único HTML. Fuentes, favicon, <div id="root">.
+├── main.tsx                      # Monta React y el <BrowserRouter>.
+├── App.tsx                       # RUTAS. Navbar + <Routes> + Footer.
+├── vite.config.ts
 │
 ├── views/                        # VISTAS. Qué secciones lleva cada página.
 │   ├── HomeView.tsx
 │   ├── ServiciosView.tsx
 │   ├── PortafolioView.tsx
-│   └── ContactoView.tsx
+│   ├── ContactoView.tsx
+│   ├── NotFoundView.tsx          # ruta comodín "*"
+│   ├── Loading.tsx               # fallback de <Suspense>
+│   └── styles/                   # el CSS propio de una vista
 │
 ├── sections/                     # SECCIONES. El corazón del proyecto.
 │   ├── hero/
@@ -82,18 +81,15 @@ nextjs-starlabs/
 └── StarLabs — Brand & Design System v1.0.md
 ```
 
-### ⚠️ Sobre el nombre `views/`
+### Sobre el nombre `views/`
 
-Esta es la carpeta de "pages" del proyecto. **No puede llamarse `pages/`.**
+Esta es la carpeta de "pages" del proyecto. Se llama `views/` por herencia de
+cuando el proyecto usaba Next.js, donde `pages/` en la raíz estaba reservado
+para el *Pages Router* y habría roto el build.
 
-Next.js reserva `pages/` (en la raíz y en `src/`) para el *Pages Router*, el
-sistema de rutas antiguo. Como este proyecto usa el *App Router* (`app/`), crear
-una carpeta `pages/` haría que Next intente convertir cada archivo de dentro en
-una URL, y el build fallaría.
-
-`views/` cumple exactamente la misma función sin ese conflicto. Si prefieres
-conservar la palabra, `components/pages/` también es segura: Next solo mira
-`pages/` cuando está en la raíz o en `src/`, no anidada.
+Con Vite esa restricción ya no existe: `pages/` sería un nombre válido. Se
+mantiene `views/` porque renombrarla no aporta nada y sí toca todos los
+imports. Si algún día se renombra, es un cambio puramente cosmético.
 
 ---
 
@@ -152,23 +148,26 @@ fuera de ella.
 
 ## Rutas y vistas: por qué están separadas
 
-Hoy `app/page.tsx` tiene ~180 líneas: metadata, datos de iconos, maquetado de
-cinco secciones y textos. Mezcla tres responsabilidades distintas.
+Hoy `views/HomeView.tsx` tiene ~180 líneas: metadata, datos de iconos,
+maquetado de cinco secciones y textos. Mezcla tres responsabilidades distintas.
 
 Con la separación, cada archivo hace una sola cosa:
 
 ```tsx
-// app/page.tsx — RUTA: la URL, la metadata. Nada más.
-import type { Metadata } from "next";
-import { HomeView } from "@/views/HomeView";
+// App.tsx — RUTAS: qué URL monta qué vista. Nada más.
+<Route path="/" element={<HomeView />} />
 
-export const metadata: Metadata = {
-  title: "StarLabs — ¿Tienes una idea? Hagámosla realidad",
-  description: "StarLabs crea contigo páginas web, aplicaciones y sistemas...",
-};
-
-export default function Page() {
-  return <HomeView />;
+// views/HomeView.tsx — VISTA: la metadata de la página y sus secciones.
+export default function HomeView() {
+  return (
+    <>
+      <Meta
+        title="StarLabs — ¿Tienes una idea? Hagámosla realidad"
+        description="StarLabs crea contigo páginas web, aplicaciones y sistemas..."
+      />
+      {/* secciones */}
+    </>
+  );
 }
 ```
 
@@ -240,9 +239,9 @@ export const services: Service[] = [ /* ... */ ];
 
 Se distinguen por **cómo se consumen**, no por qué son:
 
-- **`assets/`** (de sección o de raíz) — se importan desde el código. Next les
-  pone hash, los optimiza y avisa en build si borras uno que se usa. Es el caso
-  normal.
+- **`assets/`** (de sección o de raíz) — se importan desde el código. Vite les
+  pone hash, los copia a `dist/assets/` y falla el build si borras uno que se
+  usa. Es el caso normal.
 
   ```tsx
   import icono from "../assets/icono-sistemas.svg";
@@ -312,7 +311,7 @@ Ejemplo: una sección "Equipo".
 
 1. Una sección **no importa** de otra sección. Si dos necesitan lo mismo, eso va
    a `components/` o `data/` de la raíz.
-2. `app/` solo lleva metadata y renderiza una vista. Sin maquetado propio.
+2. `App.tsx` solo declara rutas. Sin maquetado propio.
 3. Las vistas componen y pasan props. Sin lógica ni CSS propio.
 4. Los colores, tipografías y espaciados salen de `styles/tokens.css`. Nada de
    valores en crudo en el CSS de una sección.
@@ -337,16 +336,15 @@ Ejemplo: una sección "Equipo".
 | `styles/*` | se queda igual ✅ |
 | `data/services.ts`, `data/socials.ts` | se quedan igual ✅ |
 | `data/caseStudies.ts` | `sections/portafolio/data/` |
-| Maquetado dentro de `app/page.tsx` | se reparte entre `views/HomeView.tsx` y cada sección |
-| `app/*/page.css` | al `styles/` de la sección que corresponda |
+| Maquetado dentro de `views/HomeView.tsx` | se reparte entre `views/HomeView.tsx` y cada sección |
+| `views/styles/*.css` | al `styles/` de la sección que corresponda |
 
 Tres detalles a resolver durante la migración:
 
-- **`app/page.tsx`** tiene el array `TAGLINE_ITEMS` con iconos SVG en línea.
-  Eso es contenido del Hero: va a `sections/hero/data/tagline.tsx`.
-- **`app/contacto/page.css` y `app/portafolio/page.css`** contienen estilos que
-  hoy viven en la ruta. Deben repartirse al `styles/` de su sección; en `app/`
-  no debería quedar CSS.
+- **`views/HomeView.tsx`** tiene el array `TAGLINE_ITEMS` con iconos SVG en
+  línea. Eso es contenido del Hero: va a `sections/hero/data/tagline.tsx`.
+- **`views/styles/ContactoView.css` y `PortafolioView.css`** contienen estilos
+  que hoy viven en la vista. Deben repartirse al `styles/` de su sección.
 - **`assets/1.png`–`4.png`** y la imagen con nombre de ChatGPT necesitan nombres
   descriptivos y repartirse a la sección que las usa.
 

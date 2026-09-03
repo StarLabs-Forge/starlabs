@@ -1,22 +1,20 @@
-import type { Metadata } from "next";
-import { Hero } from "../../components/sections/Hero";
-import { CaseStudy } from "../../components/cases/CaseStudy";
-import { Tag } from "../../components/ui/Tag";
-import { Reveal } from "../../components/ui/Reveal";
-import { caseStudies } from "../../data/caseStudies";
-import "./page.css";
+import { Hero } from "../components/sections/Hero";
+import { CaseStudy } from "../components/cases/CaseStudy";
+import { Tag } from "../components/ui/Tag";
+import { Reveal } from "../components/ui/Reveal";
+import { Meta } from "../components/seo/Meta";
+import { caseStudies } from "../data/caseStudies";
+import "./styles/PortafolioView.css";
 
-export const metadata: Metadata = {
-  title: "Portafolio — StarLabs",
-  description:
-    "Casos reales construidos por StarLabs. Caso destacado: CHECK, plataforma de control de acceso para vida nocturna en La Paz.",
-};
-
-export default function PortafolioPage() {
+export default function PortafolioView() {
   const check = caseStudies.find((c) => c.slug === "check")!;
 
   return (
     <>
+      <Meta
+        title="Portafolio — StarLabs"
+        description="Casos reales construidos por StarLabs. Caso destacado: CHECK, plataforma de control de acceso para vida nocturna en La Paz."
+      />
       <Hero
         eyebrow="Portafolio"
         title="No te lo contamos. Te lo mostramos."

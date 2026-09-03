@@ -1,0 +1,18 @@
+/* ============================================
+   LOGO — isotipo StarLabs
+   Reglas de motion propias (doc "Brand & Design System v1.0", sección 10):
+   glow dinámico solo en elementos importantes, hover sutil, nada permanente
+   que compita con el contenido. En reposo el ícono no anima ni brilla —
+   la animación de entrada (logoIn) sigue viviendo en Navbar.css sobre .mark.
+   ============================================ */
+.sl-logo { display: block; }
+.sl-logo .sl-ribbon { transition: filter 0.4s var(--ease); }
+
+a:hover .sl-logo .sl-ribbon,
+a:focus-visible .sl-logo .sl-ribbon {
+  filter: drop-shadow(0 0 6px rgba(40, 123, 255, 0.6));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sl-logo .sl-ribbon { transition: none; filter: none !important; }
+}

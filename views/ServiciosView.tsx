@@ -1,17 +1,16 @@
-import type { Metadata } from "next";
-import { Hero } from "../../components/sections/Hero";
-import { ServicesGrid } from "../../components/sections/ServicesGrid";
-import { CTABand } from "../../components/sections/CTABand";
-import { Reveal } from "../../components/ui/Reveal";
+import { Hero } from "../components/sections/Hero";
+import { ServicesGrid } from "../components/sections/ServicesGrid";
+import { CTABand } from "../components/sections/CTABand";
+import { Reveal } from "../components/ui/Reveal";
+import { Meta } from "../components/seo/Meta";
 
-export const metadata: Metadata = {
-  title: "Servicios — StarLabs",
-  description: "Qué construimos en StarLabs: web, apps, sistemas y soluciones a medida.",
-};
-
-export default function ServiciosPage() {
+export default function ServiciosView() {
   return (
     <>
+      <Meta
+        title="Servicios — StarLabs"
+        description="Qué construimos en StarLabs: web, apps, sistemas y soluciones a medida."
+      />
       <Hero
         eyebrow="Servicios"
         title="¿Qué podemos construir contigo?"

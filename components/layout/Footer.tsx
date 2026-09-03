@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { services } from "../../data/services";
 import { socials } from "../../data/socials";
 import "./Footer.css";
@@ -14,17 +14,17 @@ export function Footer() {
           </div>
           <div className="foot-col">
             <h5>Enlaces</h5>
-            <Link href="/">Inicio</Link>
-            <Link href="/#identidad">Sobre</Link>
-            <Link href="/#proceso">Proceso</Link>
-            <Link href="/servicios">Servicios</Link>
-            <Link href="/portafolio">Portafolio</Link>
-            <Link href="/contacto">Contacto</Link>
+            <Link to="/">Inicio</Link>
+            <Link to="/#identidad">Sobre</Link>
+            <Link to="/#proceso">Proceso</Link>
+            <Link to="/servicios">Servicios</Link>
+            <Link to="/portafolio">Portafolio</Link>
+            <Link to="/contacto">Contacto</Link>
           </div>
           <div className="foot-col">
             <h5>Categorías</h5>
             {services.map((service) => (
-              <Link key={service.id} href="/servicios">
+              <Link key={service.id} to="/servicios">
                 {service.name}
               </Link>
             ))}

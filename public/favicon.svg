@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 210" role="img" aria-label="StarLabs">
+  <!-- versión reducida para tamaños chicos (favicon, app icon): sin chispas ni estela,
+       sin costuras entre facetas — a 16-32px esos detalles se pierden y ensucian la forma -->
+  <defs>
+    <linearGradient id="sl-fav-fill" x1="8%" y1="92%" x2="92%" y2="8%">
+      <stop offset="0%" stop-color="#20D9FF"/>
+      <stop offset="38%" stop-color="#287BFF"/>
+      <stop offset="68%" stop-color="#7657FF"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+    <linearGradient id="sl-fav-ribbon" x1="0%" y1="0%" x2="20%" y2="100%">
+      <stop offset="0%" stop-color="#7657FF"/>
+      <stop offset="55%" stop-color="#287BFF"/>
+      <stop offset="100%" stop-color="#20D9FF"/>
+    </linearGradient>
+  </defs>
+  <path d="M118 150 C128 140,130 122,116 118 C104 115,96 122,100 132 C104 142,116 138,112 126 C108 116,92 112,80 122 C68 132,70 150,84 158"
+        fill="none" stroke="url(#sl-fav-ribbon)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M100 12 L118 82 L172 100 L118 118 L100 188 L82 118 L28 100 L82 82 Z" fill="url(#sl-fav-fill)"/>
+</svg>

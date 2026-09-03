@@ -1,8 +1,5 @@
-"use client";
-
 import { useEffect, useRef, useState, type PointerEvent } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { services } from "../../data/services";
 import imgWeb from "../../assets/1.png";
 import imgApps from "../../assets/2.png";
@@ -11,7 +8,8 @@ import imgMedida from "../../assets/4.png";
 import "./ServicesGrid.css";
 
 // Assets 1–4 ya generados/recortados — asignación fija, no reordenar.
-const SERVICE_IMAGES: Record<string, typeof imgWeb> = {
+// Vite resuelve cada import de imagen a la URL final del asset (string).
+const SERVICE_IMAGES: Record<string, string> = {
   web: imgWeb,
   apps: imgApps,
   sistemas: imgSistemas,
@@ -50,7 +48,7 @@ function ServiceCard({ id, name, hook, description, index }: (typeof services)[n
 
   return (
     <Link
-      href="/contacto"
+      to="/contacto"
       className={`service-card service-card--${index % 2 === 0 ? "a" : "b"}`}
       ref={ref}
       onPointerMove={handlePointerMove}
@@ -58,7 +56,7 @@ function ServiceCard({ id, name, hook, description, index }: (typeof services)[n
     >
       <span className="service-card-spotlight" aria-hidden="true" />
       <span className="service-image">
-        <Image src={SERVICE_IMAGES[id]} alt="" sizes="(max-width: 860px) 45vw, 22vw" priority={index === 0} />
+        <img src={SERVICE_IMAGES[id]} alt="" loading={index === 0 ? "eager" : "lazy"} />
       </span>
       <span className="service-card-body">
         <h3>{name}</h3>

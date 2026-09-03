@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "react-router-dom";
+import { Meta } from "../components/seo/Meta";
 import { Hero } from "../components/sections/Hero";
 import { ProductShowcase } from "../components/sections/ProductShowcase";
 import { Process } from "../components/sections/Process";
@@ -11,12 +11,6 @@ import { Eyebrow } from "../components/ui/Eyebrow";
 import { Reveal } from "../components/ui/Reveal";
 import { HeroScrollFx } from "../components/effects/HeroScrollFx";
 import { caseStudies } from "../data/caseStudies";
-
-export const metadata: Metadata = {
-  title: "StarLabs — ¿Tienes una idea? Hagámosla realidad",
-  description:
-    "StarLabs crea contigo páginas web, aplicaciones y sistemas que convierten tus ideas en algo real y que funciona.",
-};
 
 const TAGLINE_ITEMS = [
   {
@@ -61,9 +55,13 @@ const TAGLINE_ITEMS = [
   },
 ];
 
-export default function HomePage() {
+export default function HomeView() {
   return (
     <>
+      <Meta
+        title="StarLabs — ¿Tienes una idea? Hagámosla realidad"
+        description="StarLabs crea contigo páginas web, aplicaciones y sistemas que convierten tus ideas en algo real y que funciona."
+      />
       <Hero
         title={
           <>
@@ -135,7 +133,7 @@ export default function HomePage() {
             <p>
               ¿No sabes cuál necesitas? <br /> Cuéntanos qué quieres conseguir. Nosotros encontramos cómo hacerlo.
             </p>
-            <Link href="/contacto" className="btn-ghost">
+            <Link to="/contacto" className="btn-ghost">
               Hablemos <span className="arrow">→</span>
             </Link>
           </Reveal>

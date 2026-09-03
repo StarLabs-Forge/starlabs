@@ -1,13 +1,13 @@
-import Image from "next/image";
-import "./loading.css";
+import "./styles/Loading.css";
 
-// Next.js muestra este archivo automáticamente (vía Suspense) mientras
-// carga un segmento de ruta — no necesita estar montado a mano en ningún lado.
-export default function Loading() {
+// Fallback de <Suspense> en App.tsx mientras carga el chunk de una vista.
+// En Next este archivo (app/loading.tsx) lo montaba el framework solo; aquí se
+// pasa a mano, que es la única diferencia real.
+export function Loading() {
   return (
     <div className="loading-screen" role="status" aria-live="polite">
       <span className="loading-mark">
-        <Image src="/brand/isotipo.png" alt="" width={40} height={40} priority />
+        <img src="/brand/isotipo.png" alt="" width={40} height={40} />
       </span>
       <span className="loading-word">
         <span className="grad">STARLABS</span>

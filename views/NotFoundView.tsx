@@ -1,26 +1,20 @@
-import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { Eyebrow } from "../components/ui/Eyebrow";
 import { Button } from "../components/ui/Button";
-import "./not-found.css";
+import { Meta } from "../components/seo/Meta";
+import "./styles/NotFoundView.css";
 
-export const metadata: Metadata = {
-  title: "Página no encontrada — StarLabs",
-  description: "Esta página no existe o se movió de lugar.",
-};
-
-// app/not-found.tsx — Next.js lo renderiza automáticamente para cualquier
-// ruta que no matchee dentro de /app, dentro del mismo layout raíz
-// (nav + footer se mantienen).
-export default function NotFound() {
+// Ruta comodín en App.tsx: cualquier URL que no matchee cae aquí, dentro del
+// mismo layout (nav + footer se mantienen), igual que app/not-found.tsx.
+export default function NotFoundView() {
   return (
     <section className="notfound gridlines">
+      <Meta title="Página no encontrada — StarLabs" description="Esta página no existe o se movió de lugar." />
       <span className="notfound-digits" aria-hidden="true">404</span>
       <div className="wrap">
         <div className="notfound-body">
           <span className="notfound-mark">
-            <Image src="/brand/isotipo.png" alt="" width={34} height={34} />
+            <img src="/brand/isotipo.png" alt="" width={34} height={34} />
           </span>
           <Eyebrow>Error 404</Eyebrow>
           <h1>
@@ -36,9 +30,9 @@ export default function NotFound() {
             </Button>
           </div>
           <nav className="notfound-links" aria-label="Enlaces útiles">
-            <Link href="/servicios">Servicios</Link>
-            <Link href="/portafolio">Portafolio</Link>
-            <Link href="/contacto">Contacto</Link>
+            <Link to="/servicios">Servicios</Link>
+            <Link to="/portafolio">Portafolio</Link>
+            <Link to="/contacto">Contacto</Link>
           </nav>
         </div>
       </div>

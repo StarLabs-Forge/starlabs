@@ -25,3 +25,30 @@
 .contact-form input:focus,
 .contact-form select:focus { border-color: var(--accent-strong); }
 .contact-form .btn { align-self: flex-start; border: none; margin-top: 6px; cursor: pointer; }
+
+/* Estados de envío: confirmación y error. Mismos tokens que el resto del form. */
+.contact-form-done h3 {
+  font-size: 1.15rem;
+}
+
+.contact-form-done p {
+  color: var(--text-500);
+  margin-top: 8px;
+  margin-bottom: 18px;
+}
+
+.contact-form button[disabled] {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.contact-form-error {
+  color: var(--text-500);
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.contact-form-error a {
+  color: var(--text-200, inherit);
+  text-decoration: underline;
+}

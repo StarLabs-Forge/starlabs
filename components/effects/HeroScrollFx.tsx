@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect } from "react";
 
 // Transición Hero → Sobre: al hacer scroll, el Hero se lee como una capa que

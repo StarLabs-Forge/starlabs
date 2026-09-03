@@ -1,18 +1,17 @@
-import type { Metadata } from "next";
-import { Hero } from "../../components/sections/Hero";
-import { ContactForm } from "../../components/sections/ContactForm";
-import { Eyebrow } from "../../components/ui/Eyebrow";
-import { Reveal } from "../../components/ui/Reveal";
-import "./page.css";
+import { Hero } from "../components/sections/Hero";
+import { ContactForm } from "../components/sections/ContactForm";
+import { Eyebrow } from "../components/ui/Eyebrow";
+import { Reveal } from "../components/ui/Reveal";
+import { Meta } from "../components/seo/Meta";
+import "./styles/ContactoView.css";
 
-export const metadata: Metadata = {
-  title: "Contacto — StarLabs",
-  description: "Cuéntanos tu idea. No necesitas tenerlo todo claro, empecemos por lo que tienes.",
-};
-
-export default function ContactoPage() {
+export default function ContactoView() {
   return (
     <>
+      <Meta
+        title="Contacto — StarLabs"
+        description="Cuéntanos tu idea. No necesitas tenerlo todo claro, empecemos por lo que tienes."
+      />
       <Hero
         eyebrow="Contacto"
         title="Cuéntanos tu idea."
