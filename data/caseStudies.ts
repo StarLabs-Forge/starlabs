@@ -50,6 +50,6 @@ export const caseStudies: CaseStudy[] = [
       { value: "2", label: "roles: Admin y Staff" },
     ],
     closingNote:
-      "CHECK opera como producto independiente, con su propio modelo de negocio y sitio. StarLabs diseñó y construyó su arquitectura, backend y aplicaciones, y sigue acompañando su operación.",
+      "CHECK opera como producto independiente, con su propio modelo de negocio y sitio. Diseñamos y construimos su arquitectura, backend y aplicaciones, y seguimos acompañando su operación.",
   },
 ];

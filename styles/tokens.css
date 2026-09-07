@@ -28,6 +28,12 @@
 
   --brand-gradient: linear-gradient(90deg, var(--cyan), var(--blue), var(--violet), var(--purple));
 
+  /* Acento cálido — ver Brand & Design System v1.1, sección "1ter. Personalidad de marca".
+     Uso EXCLUSIVO: testimonios, contacto, nombres reales de casos de portafolio.
+     Nunca en nav, CTAs primarios ni UI de estado. */
+  --warm-accent: #E3A567;
+  --warm-accent-strong: #C17F3E;
+
   --ok: #7ea888;
 
   --display: "Space Grotesk", "Arial Narrow", sans-serif;

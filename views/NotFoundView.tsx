@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Eyebrow } from "../components/ui/Eyebrow";
 import { Button } from "../components/ui/Button";
 import { Meta } from "../components/seo/Meta";
+import { Logo } from "../components/ui/Logo";
 import "./styles/NotFoundView.css";
 
 // Ruta comodín en App.tsx: cualquier URL que no matchee cae aquí, dentro del
@@ -14,7 +15,7 @@ export default function NotFoundView() {
       <div className="wrap">
         <div className="notfound-body">
           <span className="notfound-mark">
-            <img src="/brand/isotipo.png" alt="" width={34} height={34} />
+            <Logo className="notfound-svg" />
           </span>
           <Eyebrow>Error 404</Eyebrow>
           <h1>

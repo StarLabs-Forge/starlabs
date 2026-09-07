@@ -1,0 +1,14 @@
+/* ============================================
+   TESTIMONIALS — sección
+   ============================================ */
+.testimonials-empty {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--bg-900);
+  padding: 40px;
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}

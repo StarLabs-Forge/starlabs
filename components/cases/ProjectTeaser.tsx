@@ -26,7 +26,7 @@ export function ProjectTeaser({ caseStudy }: { caseStudy: CaseStudy }) {
       </div>
       <div className="project-teaser-body">
         <span className="project-teaser-category">{caseStudy.category.join(" · ")}</span>
-        <h3>{caseStudy.name}</h3>
+        <h3 className="project-teaser-name">{caseStudy.name}</h3>
         <p>{caseStudy.solution}</p>
         <span className="project-teaser-status">{caseStudy.statusLabel}</span>
         <Link to="/portafolio" className="btn-ghost">

@@ -1,0 +1,19 @@
+/* ============================================
+   TESTIMONIAL — tarjeta individual
+   ============================================ */
+.testimonial {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--bg-900);
+  padding: 28px;
+  margin: 0;
+}
+.testimonial blockquote {
+  margin: 0 0 18px;
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--text-300);
+}
+.testimonial figcaption { display: flex; flex-direction: column; gap: 2px; }
+.testimonial-name { font-size: 14px; font-weight: 600; color: var(--warm-accent); }
+.testimonial-role { font-family: var(--mono); font-size: 11.5px; color: var(--text-500); }

@@ -78,7 +78,7 @@ nextjs-starlabs/
 │   └── brand/
 │
 ├── ESTRUCTURA.md                 # este archivo
-└── StarLabs — Brand & Design System v1.0.md
+└── StarLabs — Brand & Design System v1.1.md
 ```
 
 ### Sobre el nombre `views/`

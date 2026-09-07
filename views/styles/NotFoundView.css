@@ -39,7 +39,7 @@
   margin-bottom: 22px;
   opacity: 0.9;
 }
-.notfound-mark img {
+.notfound-mark svg {
   width: 34px;
   height: 34px;
   object-fit: contain;

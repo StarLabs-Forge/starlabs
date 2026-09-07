@@ -27,7 +27,7 @@ export function CaseStudy({ caseStudy, indexLabel }: CaseStudyProps) {
         <div>
           {indexLabel && <span className="idx">{indexLabel}</span>}
           <Eyebrow>{caseStudy.eyebrowLabel}</Eyebrow>
-          <h3 style={{ marginTop: 10 }}>{caseStudy.name}</h3>
+          <h3 className="case-name" style={{ marginTop: 10 }}>{caseStudy.name}</h3>
           <span className="role">{caseStudy.role}</span>
         </div>
         <span className="case-status">{caseStudy.statusLabel}</span>

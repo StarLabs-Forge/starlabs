@@ -23,7 +23,7 @@
   align-items: center;
   justify-content: center;
 }
-.loading-mark img {
+.loading-mark svg {
   width: 40px;
   height: 40px;
   object-fit: contain;
@@ -92,7 +92,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .loading-mark img,
+  .loading-mark svg,
   .loading-mark::before,
   .loading-bar::after {
     animation: none !important;

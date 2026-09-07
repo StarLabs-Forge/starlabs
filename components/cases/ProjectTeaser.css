@@ -51,6 +51,7 @@
   margin-bottom: 8px;
 }
 .project-teaser-body h3 { font-size: 1.6rem; margin-bottom: 10px; }
+.project-teaser-name { color: var(--warm-accent); }
 .project-teaser-body p { color: var(--text-300); font-size: 14.5px; max-width: 56ch; margin-bottom: 16px; }
 .project-teaser-status {
   display: block;

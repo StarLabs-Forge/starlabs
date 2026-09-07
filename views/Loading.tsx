@@ -1,3 +1,4 @@
+import { Logo } from "../components/ui/Logo";
 import "./styles/Loading.css";
 
 // Fallback de <Suspense> en App.tsx mientras carga el chunk de una vista.
@@ -7,7 +8,7 @@ export function Loading() {
   return (
     <div className="loading-screen" role="status" aria-live="polite">
       <span className="loading-mark">
-        <img src="/brand/isotipo.png" alt="" width={40} height={40} />
+        <Logo className="loading-svg" />
       </span>
       <span className="loading-word">
         <span className="grad">STARLABS</span>

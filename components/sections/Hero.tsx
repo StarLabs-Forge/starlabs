@@ -77,7 +77,7 @@ export function Hero({
           {showStatus && (
             <div className="sys-status">
               <span className="pulse-dot" />
-              System status: <span className="ok-text">online</span>
+              Estado del sistema: <span className="ok-text">operativo</span>
             </div>
           )}
         </div>

@@ -6,10 +6,12 @@ import { Process } from "../components/sections/Process";
 import { Identity } from "../components/sections/Identity";
 import { ServicesGrid } from "../components/sections/ServicesGrid";
 import { ProjectTeaser } from "../components/cases/ProjectTeaser";
+import { Testimonials } from "../components/testimonials/Testimonials";
 import { CTABand } from "../components/sections/CTABand";
 import { Eyebrow } from "../components/ui/Eyebrow";
 import { Reveal } from "../components/ui/Reveal";
 import { HeroScrollFx } from "../components/effects/HeroScrollFx";
+import { SectionParallax } from "../components/effects/SectionParallax";
 import { caseStudies } from "../data/caseStudies";
 
 const TAGLINE_ITEMS = [
@@ -88,6 +90,7 @@ export default function HomeView() {
         <ProductShowcase />
       </Hero>
       <HeroScrollFx />
+      <SectionParallax />
 
       <section id="identidad" className="section-deco gridlines">
         <div className="section-index">01</div>
@@ -152,6 +155,19 @@ export default function HomeView() {
           </Reveal>
           <Reveal delay={100}>
             <ProjectTeaser caseStudy={caseStudies[0]} />
+          </Reveal>
+        </div>
+      </section>
+
+      <section id="testimonios" className="tight">
+        <div className="wrap">
+          <Reveal className="section-head">
+            <span className="idx">05 / TESTIMONIOS</span>
+            <Eyebrow>Lo que dicen quienes trabajaron con nosotros</Eyebrow>
+            <h2>Construimos, y quien nos contrató lo cuenta.</h2>
+          </Reveal>
+          <Reveal delay={100}>
+            <Testimonials />
           </Reveal>
         </div>
       </section>

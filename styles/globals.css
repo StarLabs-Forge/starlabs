@@ -125,6 +125,9 @@ section.tight { padding: 88px 0; }
   letter-spacing: -0.03em;
   color: var(--text-100);
   opacity: 0.045;
+  transition: transform 0.2s linear;
+  transform: translateY(calc(var(--section-progress, 0) * -48px));
+  will-change: transform;
   pointer-events: none;
   user-select: none;
   z-index: 0;
