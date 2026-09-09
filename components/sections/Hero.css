@@ -5,6 +5,10 @@
   --hero-progress: 0;
   position: relative;
   overflow: hidden;
+  min-height: calc(100dvh - var(--nav-h));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 128px 0 96px;
   border-bottom: 1px solid var(--line-soft);
 }

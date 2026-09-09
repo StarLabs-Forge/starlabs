@@ -1,0 +1,54 @@
+/* ============================================
+   PROJECT THUMB — mockup abstracto de pantalla
+   ============================================ */
+.pthumb {
+  height: 160px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  border: 1px solid var(--line);
+  border-bottom: none;
+  background: var(--bg-900);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.pthumb-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.pthumb-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--line); }
+
+.pthumb-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 18px;
+  background:
+    radial-gradient(circle at 15% 20%, var(--pthumb-glow, rgba(32,217,255,0.16)), transparent 55%);
+}
+
+.pthumb-mark {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--display);
+  font-size: 17px;
+  color: var(--bg-950);
+  background: var(--pthumb-accent, var(--brand-gradient));
+}
+
+.pthumb-lines { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.pthumb-line { display: block; height: 8px; border-radius: 4px; background: var(--line-soft); }
+
+.accent-cyan { --pthumb-accent: var(--cyan); --pthumb-glow: rgba(32,217,255,0.18); }
+.accent-blue { --pthumb-accent: var(--blue); --pthumb-glow: rgba(40,123,255,0.18); }
+.accent-violet { --pthumb-accent: var(--violet); --pthumb-glow: rgba(118,87,255,0.18); }
+.accent-purple { --pthumb-accent: var(--purple); --pthumb-glow: rgba(168,85,247,0.18); }

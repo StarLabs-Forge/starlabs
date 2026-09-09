@@ -71,9 +71,22 @@ p.lead {
 }
 
 /* ============================================
-   SECTIONS — layout compartido por todas las <section> de las páginas
+   SECTIONS — layout compartido por todas las <section> de las páginas.
+   Cada sección ocupa como mínimo el alto visible bajo el nav (100dvh -
+   --nav-h), para que se lea "de un golpe de vista" al hacer scroll —
+   min-height, no height fija: si el contenido de una sección necesita
+   más espacio (ServicesGrid en mobile, Testimonials con varias tarjetas),
+   la sección simplemente crece, nunca se recorta contenido.
+   dvh en vez de vh porque en mobile vh incluye la barra de UI del
+   navegador aunque esté oculta — dvh se ajusta al viewport real visible.
    ============================================ */
-section { padding: 120px 0; }
+section {
+  min-height: calc(100dvh - var(--nav-h));
+  padding: 120px 0;
+  display: flex;
+  align-items: center;
+}
+section > .wrap { width: 100%; }
 section.tight { padding: 88px 0; }
 .section-head { max-width: 640px; margin-bottom: 56px; }
 .section-head h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); margin-top: 14px; }

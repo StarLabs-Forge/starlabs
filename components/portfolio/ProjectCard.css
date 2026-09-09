@@ -1,0 +1,78 @@
+/* ============================================
+   PROJECT CARD — grid de /portafolio
+   ============================================ */
+.pcard {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--bg-900);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.pcard:hover { border-color: var(--line); transform: translateY(-2px); }
+.pcard:not(.pcard-soon):hover { border-color: rgba(32, 217, 255, 0.35); }
+
+.pcard-thumb-wrap { position: relative; }
+
+.pcard-lock {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(5, 8, 22, 0.72);
+  color: var(--text-300);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pcard-soon .pthumb { filter: grayscale(1) brightness(0.75); }
+
+.pcard-body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+
+.pcard-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.pcard-head h3 { font-size: 1.15rem; }
+.pcard-soon .pcard-head h3 { color: var(--text-500); }
+
+.pcard-pitch {
+  color: var(--text-300);
+  font-size: 14px;
+  line-height: 1.5;
+  flex: 1;
+  min-height: 42px;
+}
+.pcard-soon .pcard-pitch { color: var(--text-600); }
+
+.pcard-actions { display: flex; gap: 10px; margin-top: 4px; flex-wrap: wrap; }
+.pcard-actions .btn,
+.pcard-actions .btn-ghost {
+  font-size: 12.5px;
+  padding: 9px 14px;
+  border: none;
+  cursor: pointer;
+}
+.pcard-actions .btn-ghost { border: 1px solid var(--line); }
+
+.pcard-actions button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  filter: none;
+  transform: none;
+  box-shadow: none;
+}
+.pcard-actions button:disabled:hover {
+  filter: none;
+  transform: none;
+  border-color: var(--line);
+}
+
+@media (max-width: 480px) {
+  .pcard-actions { flex-direction: column; }
+  .pcard-actions .btn,
+  .pcard-actions .btn-ghost { width: 100%; justify-content: center; }
+}

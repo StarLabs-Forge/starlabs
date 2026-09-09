@@ -1,4 +1,8 @@
-/* generic card shell (portafolio "próximos casos") */
-.card { background: var(--bg-950); padding: 34px; }
-.card h3 { font-size: 1.15rem; }
-.card p { color: var(--text-500); font-size: 14.5px; margin-bottom: 16px; }
+/* ============================================
+   PORTAFOLIO — grid de proyectos
+   ============================================ */
+.pgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+  gap: 24px;
+}
