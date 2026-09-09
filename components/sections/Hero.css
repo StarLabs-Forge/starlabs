@@ -5,12 +5,20 @@
   --hero-progress: 0;
   position: relative;
   overflow: hidden;
+  padding: 128px 0 96px;
+  border-bottom: 1px solid var(--line-soft);
+}
+/* Solo el hero de Home (con ProductShowcase + tagline + CTAs) ocupa la
+   pantalla completa — tiene contenido de sobra para llenarla sin quedar
+   vacío. El hero de subpáginas (variant="page": Contacto, Portafolio,
+   Servicios) es corto a propósito (título + lead, sin showcase) — forzarlo
+   a 100dvh dejaba el título flotando solo en medio de una pantalla vacía,
+   separado del contenido real que viene justo debajo. */
+.hero--home {
   min-height: calc(100dvh - var(--nav-h));
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 128px 0 96px;
-  border-bottom: 1px solid var(--line-soft);
 }
 .hero::before {
   content: "";

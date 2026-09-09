@@ -11,24 +11,26 @@ export default function ServiciosView() {
         title="Servicios — StarLabs"
         description="Qué construimos en StarLabs: web, apps, sistemas y soluciones a medida."
       />
-      <Hero
-        eyebrow="Servicios"
-        title="¿Qué podemos construir contigo?"
-        lead="Desde una idea hasta una solución lista para usar."
-        variant="page"
-        paddingBottom={56}
-      />
+      <div className="page-hero-block">
+        <Hero
+          eyebrow="Servicios"
+          title="¿Qué podemos construir contigo?"
+          lead="Desde una idea hasta una solución lista para usar."
+          variant="page"
+          paddingBottom={56}
+        />
 
-      <section className="tight">
-        <div className="wrap">
-          <ServicesGrid />
-          <Reveal delay={100} className="services-followup">
-            <p>
-              ¿No sabes cuál necesitas? <br /> Cuéntanos qué quieres conseguir. Nosotros encontramos cómo hacerlo.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+        <section className="tight">
+          <div className="wrap">
+            <ServicesGrid />
+            <Reveal delay={100} className="services-followup">
+              <p>
+                ¿No sabes cuál necesitas? <br /> Cuéntanos qué quieres conseguir. Nosotros encontramos cómo hacerlo.
+              </p>
+            </Reveal>
+          </div>
+        </section>
+      </div>
 
       <Reveal>
         <CTABand

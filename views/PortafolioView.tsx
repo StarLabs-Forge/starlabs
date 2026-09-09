@@ -26,25 +26,27 @@ export default function PortafolioView() {
         title="Portafolio — StarLabs"
         description="Proyectos reales construidos por StarLabs, y lo que viene. Caso destacado: CHECK, control de acceso para vida nocturna en La Paz."
       />
-      <Hero
-        eyebrow="Portafolio"
-        title="No te lo contamos. Te lo mostramos."
-        lead="Proyectos que nacieron como ideas y se convirtieron en productos reales — o están en camino de serlo."
-        variant="page"
-        paddingBottom={48}
-      />
+      <div className="page-hero-block">
+        <Hero
+          eyebrow="Portafolio"
+          title="No te lo contamos. Te lo mostramos."
+          lead="Proyectos que nacieron como ideas y se convirtieron en productos reales — o están en camino de serlo."
+          variant="page"
+          paddingBottom={48}
+        />
 
-      <section className="tight">
-        <div className="wrap">
-          <div className="pgrid">
-            {portfolioProjects.map((project, index) => (
-              <Reveal key={project.slug} delay={index * 60}>
-                <ProjectCard project={project} onOpenDetail={setOpenSlug} />
-              </Reveal>
-            ))}
+        <section className="tight">
+          <div className="wrap">
+            <div className="pgrid">
+              {portfolioProjects.map((project, index) => (
+                <Reveal key={project.slug} delay={index * 60}>
+                  <ProjectCard project={project} onOpenDetail={setOpenSlug} />
+                </Reveal>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       {openCaseStudy && <CaseModal caseStudy={openCaseStudy} onClose={() => setOpenSlug(null)} />}
     </>

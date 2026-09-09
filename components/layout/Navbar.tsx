@@ -5,11 +5,6 @@ import "./Navbar.css";
 
 // Reemplaza el toggle imperativo + nav elevation de /script.js:3-37.
 // Misma lógica, expresada como estado de React en vez de manipulación directa del DOM.
-const NAV_LINKS = [
-  { href: "/servicios", label: "Servicios" },
-  { href: "/portafolio", label: "Portafolio" },
-  { href: "/contacto", label: "Contacto" },
-];
 
 export function Navbar() {
   const { pathname } = useLocation();
@@ -44,16 +39,26 @@ export function Navbar() {
           <Link to="/#proceso" onClick={() => setOpen(false)}>
             Proceso
           </Link>
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              to={link.href}
-              aria-current={pathname === link.href ? "page" : undefined}
-              onClick={() => setOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
+          <Link
+            to="/servicios"
+            aria-current={pathname === "/servicios" ? "page" : undefined}
+            onClick={() => setOpen(false)}
+          >
+            Servicios
+          </Link>
+          {/* Portafolio ya no es una ruta propia: es la sección "04 / PORTAFOLIO"
+              del Home (ver <ProjectDeck>). /portafolio sigue existiendo como
+              redirect de compatibilidad (ver App.tsx) para links viejos. */}
+          <Link to="/#proyectos" onClick={() => setOpen(false)}>
+            Portafolio
+          </Link>
+          <Link
+            to="/contacto"
+            aria-current={pathname === "/contacto" ? "page" : undefined}
+            onClick={() => setOpen(false)}
+          >
+            Contacto
+          </Link>
           <Link to="/contacto" className="btn" onClick={() => setOpen(false)}>
             Hablemos
           </Link>

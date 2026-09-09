@@ -5,14 +5,13 @@ import { ProductShowcase } from "../components/sections/ProductShowcase";
 import { Process } from "../components/sections/Process";
 import { Identity } from "../components/sections/Identity";
 import { ServicesGrid } from "../components/sections/ServicesGrid";
-import { ProjectTeaser } from "../components/cases/ProjectTeaser";
+import { ProjectDeck } from "../components/portfolio/ProjectDeck";
 import { Testimonials } from "../components/testimonials/Testimonials";
 import { CTABand } from "../components/sections/CTABand";
 import { Eyebrow } from "../components/ui/Eyebrow";
 import { Reveal } from "../components/ui/Reveal";
 import { HeroScrollFx } from "../components/effects/HeroScrollFx";
 import { SectionParallax } from "../components/effects/SectionParallax";
-import { caseStudies } from "../data/caseStudies";
 
 const TAGLINE_ITEMS = [
   {
@@ -92,7 +91,7 @@ export default function HomeView() {
       <HeroScrollFx />
       <SectionParallax />
 
-      <section id="identidad" className="section-deco gridlines">
+      <section id="identidad" className="section-deco gridlines section-snap">
         <div className="section-index">01</div>
         <div className="wrap">
           <Reveal className="section-head">
@@ -106,7 +105,7 @@ export default function HomeView() {
         </div>
       </section>
 
-      <section id="proceso" className="section-deco">
+      <section id="proceso" className="section-deco section-snap">
         <div className="section-index">02</div>
         <div className="wrap">
           <Reveal className="section-head">
@@ -120,7 +119,7 @@ export default function HomeView() {
         </div>
       </section>
 
-      <section id="servicios" className="section-deco gridlines">
+      <section id="servicios" className="section-deco gridlines section-snap">
         <div className="section-index">03</div>
         <div className="wrap">
           <Reveal className="section-head">
@@ -143,23 +142,23 @@ export default function HomeView() {
         </div>
       </section>
 
-      <section id="proyectos" className="tight">
+      <section id="proyectos" className="tight section-snap">
         <div className="wrap">
           <Reveal className="section-head">
             <span className="idx">04 / PORTAFOLIO</span>
             <Eyebrow>Portafolio</Eyebrow>
-            <h2>No te lo contamos. Te lo mostramos.</h2>
+            <h2>Ya construimos uno. Vienen cuatro más.</h2>
             <p style={{ color: "var(--text-500)", marginTop: 10 }}>
-              Proyectos que nacieron como ideas y se convirtieron en productos reales.
+              Un vistazo rápido a lo que StarLabs tiene en producción y en camino.
             </p>
           </Reveal>
           <Reveal delay={100}>
-            <ProjectTeaser caseStudy={caseStudies[0]} />
+            <ProjectDeck />
           </Reveal>
         </div>
       </section>
 
-      <section id="testimonios" className="tight">
+      <section id="testimonios" className="tight section-snap">
         <div className="wrap">
           <Reveal className="section-head">
             <span className="idx">05 / TESTIMONIOS</span>

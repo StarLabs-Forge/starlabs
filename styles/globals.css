@@ -71,23 +71,49 @@ p.lead {
 }
 
 /* ============================================
-   SECTIONS — layout compartido por todas las <section> de las páginas.
-   Cada sección ocupa como mínimo el alto visible bajo el nav (100dvh -
-   --nav-h), para que se lea "de un golpe de vista" al hacer scroll —
-   min-height, no height fija: si el contenido de una sección necesita
-   más espacio (ServicesGrid en mobile, Testimonials con varias tarjetas),
-   la sección simplemente crece, nunca se recorta contenido.
+   SECTIONS — layout compartido por todas las <section> de las páginas
+   ============================================ */
+section { padding: 120px 0; }
+section.tight { padding: 88px 0; }
+
+/* .section-snap — SOLO para las secciones del recorrido largo de Home
+   (Sobre / Proceso / Servicios / Portafolio-teaser / Testimonios): cada
+   una ocupa como mínimo el alto visible bajo el nav (100dvh - --nav-h)
+   para que se lea "de un golpe de vista" al hacer scroll. min-height, no
+   height fija — si el contenido necesita más espacio (ServicesGrid en
+   mobile, Testimonials con varias tarjetas) la sección simplemente crece;
+   nunca se recorta contenido, en el peor caso aparece scroll.
    dvh en vez de vh porque en mobile vh incluye la barra de UI del
    navegador aunque esté oculta — dvh se ajusta al viewport real visible.
-   ============================================ */
-section {
+   NO se aplica a las páginas internas (Contacto, Portafolio, Servicios):
+   ahí el hero es compacto (variant="page") y forzar el alto de pantalla
+   dejaba un salto vacío entre el título del hero y el contenido de abajo. */
+.section-snap {
   min-height: calc(100dvh - var(--nav-h));
-  padding: 120px 0;
   display: flex;
   align-items: center;
 }
-section > .wrap { width: 100%; }
-section.tight { padding: 88px 0; }
+.section-snap > .wrap { width: 100%; }
+
+/* .page-hero-block — envuelve <Hero variant="page"> + su sección de
+   contenido inmediata (Contacto, Portafolio, Servicios) para que ambos,
+   juntos, ocupen una sola pantalla ("golpe de vista") sin separar el
+   título del contenido. El hero conserva su alto natural (título + lead,
+   corto); la sección de contenido crece para ocupar el resto del
+   viewport y centra su contenido ahí. Si el contenido es más alto que
+   ese resto (portafolio con muchas tarjetas, formulario largo), la
+   sección simplemente crece más allá de la pantalla — nunca se recorta
+   nada, en el peor caso hay scroll. */
+.page-hero-block {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100dvh - var(--nav-h));
+}
+.page-hero-block > section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
 .section-head { max-width: 640px; margin-bottom: 56px; }
 .section-head h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); margin-top: 14px; }
 /* wipe reveal — solo cuando Reveal está armado (clase .reveal presente);

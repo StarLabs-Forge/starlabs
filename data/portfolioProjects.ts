@@ -29,6 +29,7 @@ export const portfolioProjects: PortfolioProject[] = [
     status: "live",
     accent: "cyan",
     caseStudySlug: "check",
+    appUrl: "https://check-seven-alpha.vercel.app/",
   },
   {
     slug: "clandest",

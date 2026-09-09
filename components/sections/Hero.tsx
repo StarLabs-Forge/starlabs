@@ -56,7 +56,7 @@ export function Hero({
       : undefined;
 
   return (
-    <header className="hero" style={headerStyle}>
+    <header className={`hero hero--${variant}`} style={headerStyle}>
       <div className="wrap" style={wrapStyle}>
         <div>
           {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
