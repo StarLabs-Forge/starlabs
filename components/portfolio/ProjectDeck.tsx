@@ -39,6 +39,10 @@ export function ProjectDeck() {
   }, [active]);
 
   const onPointerDown = (e: ReactPointerEvent<HTMLDivElement>) => {
+    // Si el press empieza sobre un link/botón (p.ej. "Ver portafolio
+    // completo"), no capturamos el puntero: setPointerCapture en el shell
+    // retarga también el click de compatibilidad, y el link nunca navega.
+    if ((e.target as HTMLElement).closest("a, button")) return;
     drag.current = { dragging: true, startX: e.clientX, delta: 0 };
     e.currentTarget.setPointerCapture(e.pointerId);
   };
@@ -92,7 +96,7 @@ export function ProjectDeck() {
                   pointerEvents: "none",
                 }
               : {
-                  transform: `translate3d(${offset * 168}px,0,${-abs * 140}px) rotateY(${offset * -8}deg) scale(${
+                  transform: `translate3d(${offset * 198}px,0,${-abs * 140}px) rotateY(${offset * -8}deg) scale(${
                     isActive ? 1 : 0.82 - (abs - 1) * 0.08
                   })`,
                   opacity: Math.max(isActive ? 1 : 0.55 - (abs - 1) * 0.15, 0.15),

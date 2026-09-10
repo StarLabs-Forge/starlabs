@@ -9,7 +9,16 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* proximity, no mandatory: alinea el scroll a cada sección cuando te
+     detenés cerca de su borde (soluciona que el título quede tapado por
+     el nav sticky "a mitad de camino"), pero no te atrapa dentro de una
+     sección más alta que la pantalla (ServicesGrid en mobile, Testimonials
+     con varias tarjetas) — ahí seguís pudiendo scrollear libre para leer
+     todo el contenido antes de que snapee a la siguiente. */
+  scroll-snap-type: y proximity;
+}
 
 body {
   background: var(--bg-950);
@@ -92,6 +101,12 @@ section.tight { padding: 88px 0; }
   min-height: calc(100dvh - var(--nav-h));
   display: flex;
   align-items: center;
+  scroll-snap-align: start;
+  /* el nav es sticky, no fijo — su alto sigue "gastado" en el flujo del
+     documento, pero al hacer scroll queda flotando sobre lo que esté
+     arriba. scroll-margin-top hace que el punto de snap quede justo
+     debajo del nav, no en el borde real de la sección. */
+  scroll-margin-top: var(--nav-h);
 }
 .section-snap > .wrap { width: 100%; }
 
@@ -114,6 +129,10 @@ section.tight { padding: 88px 0; }
   display: flex;
   align-items: center;
 }
+/* sin esto, .wrap (hijo único de un flex en row) se encoge a su contenido
+   en vez de ocupar el ancho normal (max-width + auto margins) — es la
+   causa de que el grid de /portafolio mostrara 2 columnas en vez de 3. */
+.page-hero-block > section > .wrap { width: 100%; }
 .section-head { max-width: 640px; margin-bottom: 56px; }
 .section-head h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); margin-top: 14px; }
 /* wipe reveal — solo cuando Reveal está armado (clase .reveal presente);
