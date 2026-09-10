@@ -42,7 +42,7 @@ const TAGLINE_ITEMS = [
     ),
   },
   {
-    label: "Soluciones a medida",
+    label: "Productos propios",
     icon: (
       <svg viewBox="0 0 16 16" fill="none">
         <circle cx="8" cy="8" r="2.2" stroke="currentColor" />

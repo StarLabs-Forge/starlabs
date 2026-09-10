@@ -1,25 +1,26 @@
 import "./Identity.css";
 
-// Sobre StarLabs (Home). Tres conceptos que muestran la evolución
-// IDEA → SOLUCIÓN → PRODUCTO — continuación directa de la promesa del Hero.
+// Sobre StarLabs (Home). Filosofía e identidad — quiénes somos y cómo
+// pensamos — no proceso: el paso a paso de cómo trabajamos ya vive en
+// <Process /> (sección "Proceso"), no se repite acá.
 const STAGES = [
   {
     num: "01",
-    kicker: "Idea",
-    title: "Entendemos",
-    description: "Primero entendemos tu problema.",
+    kicker: "Curiosidad",
+    title: "Siempre hay otra pregunta.",
+    description: "Cuestionamos, exploramos y buscamos nuevas posibilidades.",
   },
   {
     num: "02",
-    kicker: "Solución",
-    title: "Construimos",
-    description: "Diseñamos la solución y la hacemos realidad.",
+    kicker: "Propósito",
+    title: "La tecnología debe servir para algo.",
+    description: "Creamos con una razón clara: resolver, mejorar o hacer posible.",
   },
   {
     num: "03",
-    kicker: "Producto",
-    title: "Evolucionamos",
-    description: "Seguimos mejorándola cuando tu proyecto crece.",
+    kicker: "Creación",
+    title: "No esperamos a que alguien nos diga qué construir.",
+    description: "También desarrollamos nuestras propias ideas y productos.",
   },
 ];
 
@@ -28,8 +29,8 @@ export function Identity() {
     <>
       <div className="about-lead">
         <p>
-          En StarLabs trabajamos contigo para transformar una idea, necesidad o problema en una solución digital
-          que puedas usar, mostrar y hacer crecer.
+          En StarLabs creemos que la tecnología tiene sentido cuando resuelve algo, abre una posibilidad o permite
+          construir algo que antes no existía.
         </p>
       </div>
 

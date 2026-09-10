@@ -115,7 +115,7 @@
 .hero .showcase { animation: fadeUp 0.9s var(--ease-out) 0.2s both; }
 .hero .hero-tagline { animation: fadeUp 0.7s var(--ease-out) 0.55s both; }
 
-/* tagline row — "Web · Apps · Sistemas · Soluciones a medida" under the CTAs */
+/* tagline row — "Web · Apps · Sistemas · Productos propios" under the CTAs */
 .hero-tagline {
   grid-column: 1;
   list-style: none;

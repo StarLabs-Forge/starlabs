@@ -54,13 +54,11 @@ export function Navbar() {
           </Link>
           <Link
             to="/contacto"
+            className="btn"
             aria-current={pathname === "/contacto" ? "page" : undefined}
             onClick={() => setOpen(false)}
           >
             Contacto
-          </Link>
-          <Link to="/contacto" className="btn" onClick={() => setOpen(false)}>
-            Hablemos
           </Link>
         </div>
         <button

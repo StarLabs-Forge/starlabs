@@ -4,7 +4,7 @@ import { services } from "../../data/services";
 import imgWeb from "../../assets/1.png";
 import imgApps from "../../assets/2.png";
 import imgSistemas from "../../assets/3.png";
-import imgMedida from "../../assets/4.png";
+import imgProductos from "../../assets/4.png";
 import "./ServicesGrid.css";
 
 // Assets 1–4 ya generados/recortados — asignación fija, no reordenar.
@@ -13,7 +13,7 @@ const SERVICE_IMAGES: Record<string, string> = {
   web: imgWeb,
   apps: imgApps,
   sistemas: imgSistemas,
-  medida: imgMedida,
+  productos: imgProductos,
 };
 
 function useCardTilt() {
@@ -43,12 +43,12 @@ function useCardTilt() {
   return { ref, handlePointerMove, resetTilt };
 }
 
-function ServiceCard({ id, name, hook, description, index }: (typeof services)[number] & { index: number }) {
+function ServiceCard({ id, name, hook, description, path, index }: (typeof services)[number] & { index: number }) {
   const { ref, handlePointerMove, resetTilt } = useCardTilt();
 
   return (
     <Link
-      to="/contacto"
+      to={path}
       className={`service-card service-card--${index % 2 === 0 ? "a" : "b"}`}
       ref={ref}
       onPointerMove={handlePointerMove}
@@ -73,7 +73,7 @@ function ServiceCard({ id, name, hook, description, index }: (typeof services)[n
 // Las cuatro cosas que StarLabs construye — usado en Home y en /servicios,
 // misma fuente que la fila de categorías del Hero. Stagger propio (no depende
 // del <Reveal> que envuelve la sección) para que Web → Apps → Sistemas →
-// Soluciones a medida entren en secuencia corta.
+// Productos propios entren en secuencia corta.
 export function ServicesGrid() {
   const gridRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(false);

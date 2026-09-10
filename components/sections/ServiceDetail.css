@@ -1,0 +1,54 @@
+/* ============================================
+   SERVICE DETAIL — contenido de /servicios/web, /servicios/apps,
+   /servicios/sistemas. Mismo lenguaje visual que .about-lead / .steps
+   (Identity.css) pero con su propio namespace: estas páginas se cargan
+   solas (lazy), no dependen de que Home haya cargado su CSS.
+   ============================================ */
+.svc-lead {
+  border-left: 2px solid var(--accent-dim);
+  padding-left: 22px;
+  max-width: 68ch;
+  margin-bottom: 56px;
+}
+.svc-lead p {
+  color: var(--text-300);
+  font-size: 15.5px;
+  line-height: 1.75;
+}
+
+.svc-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line-soft);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.svc-feature { background: var(--bg-950); padding: 30px 28px; }
+.svc-feature:nth-child(even) { background: var(--bg-900); }
+.svc-feature h3 { font-size: 1.02rem; margin-bottom: 8px; }
+.svc-feature p { color: var(--text-500); font-size: 14px; }
+
+.svc-examples { margin-top: 64px; }
+.svc-examples-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+.svc-example {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  letter-spacing: 0.01em;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--text-300);
+  transition: border-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
+}
+.svc-example:hover { border-color: var(--accent-strong); color: var(--text-100); }
+
+@media (max-width: 860px) {
+  .svc-features { grid-template-columns: 1fr; }
+}

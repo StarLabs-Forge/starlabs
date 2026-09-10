@@ -24,7 +24,7 @@ export function Footer() {
           <div className="foot-col">
             <h5>Categorías</h5>
             {services.map((service) => (
-              <Link key={service.id} to="/servicios">
+              <Link key={service.id} to={service.path}>
                 {service.name}
               </Link>
             ))}

@@ -9,7 +9,7 @@ export default function ServiciosView() {
     <>
       <Meta
         title="Servicios — StarLabs"
-        description="Qué construimos en StarLabs: web, apps, sistemas y soluciones a medida."
+        description="Qué construimos en StarLabs: web, apps, sistemas y productos propios."
       />
       <div className="page-hero-block">
         <Hero
