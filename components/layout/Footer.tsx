@@ -9,8 +9,8 @@ export function Footer() {
       <div className="wrap">
         <div className="foot-grid">
           <div className="foot-col">
-            <h5>StarLabs.dev</h5>
-            <p style={{ maxWidth: "30ch" }}>Tecnología para convertir ideas en soluciones reales.</p>
+            <h5>AETHRON</h5>
+            <p style={{ maxWidth: "30ch" }}>Ingeniería de producto y arquitectura digital para negocios en crecimiento.</p>
           </div>
           <div className="foot-col">
             <h5>Enlaces</h5>
@@ -31,7 +31,7 @@ export function Footer() {
           </div>
         </div>
         <div className="foot-bottom">
-          <span>© 2026 STARLABS.dev</span>
+          <span>© 2026 AETHRON</span>
           <ul className="foot-social">
             {socials.map((social) => (
               <li key={social.id}>

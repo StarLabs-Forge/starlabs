@@ -23,8 +23,7 @@ export function Navbar() {
       <div className="wrap">
         <Link to="/" className="logo">
           <Logo className="mark" />
-          <span className="wordmark">STARLABS</span>
-          <span className="sub">.dev</span>
+          <span className="wordmark">AETHRON</span>
         </Link>
         <div className={`navlinks${open ? " open" : ""}`}>
           <Link to="/" aria-current={pathname === "/" ? "page" : undefined} onClick={() => setOpen(false)}>

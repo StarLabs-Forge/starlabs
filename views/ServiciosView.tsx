@@ -8,8 +8,8 @@ export default function ServiciosView() {
   return (
     <>
       <Meta
-        title="Servicios — StarLabs"
-        description="Qué construimos en StarLabs: web, apps, sistemas y productos propios."
+        title="Servicios — AETHRON"
+        description="Qué construimos en AETHRON: web, apps, sistemas y productos propios."
       />
       <div className="page-hero-block">
         <Hero

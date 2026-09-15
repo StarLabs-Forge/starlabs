@@ -29,12 +29,12 @@ export default function ProductosView() {
   return (
     <>
       <Meta
-        title="Productos propios — StarLabs"
-        description="Los productos y proyectos que nacen dentro de StarLabs, no por encargo de un cliente."
+        title="Productos propios — AETHRON"
+        description="Los productos y proyectos que nacen dentro de AETHRON, no por encargo de un cliente."
       />
       <div className="page-hero-block">
         <Hero
-          eyebrow="StarLabs"
+          eyebrow="AETHRON"
           title="Productos que nacen de nuestras propias ideas."
           lead="Nuestras ideas, hechas realidad."
           variant="page"
@@ -45,9 +45,9 @@ export default function ProductosView() {
           <div className="wrap">
             <Reveal className="svc-lead">
               <p>
-                StarLabs no solo construye para otros: también investigamos problemas, planteamos ideas propias,
+                AETHRON no solo construye para otros: también investigamos problemas, planteamos ideas propias,
                 diseñamos soluciones y desarrollamos nuestros propios productos tecnológicos. Estos son los proyectos
-                que nacen dentro de StarLabs — no por encargo de un cliente, sino porque vimos un problema que
+                que nacen dentro de AETHRON — no por encargo de un cliente, sino porque vimos un problema que
                 queríamos resolver.
               </p>
             </Reveal>

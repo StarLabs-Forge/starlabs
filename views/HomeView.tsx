@@ -60,8 +60,8 @@ export default function HomeView() {
   return (
     <>
       <Meta
-        title="StarLabs — ¿Tienes una idea? Hagámosla realidad"
-        description="StarLabs crea contigo páginas web, aplicaciones y sistemas que convierten tus ideas en algo real y que funciona."
+        title="AETHRON — ¿Tienes una idea? Hagámosla realidad"
+        description="AETHRON crea contigo páginas web, aplicaciones y sistemas que convierten tus ideas en algo real y que funciona."
       />
       <Hero
         title={
@@ -96,7 +96,7 @@ export default function HomeView() {
         <div className="wrap">
           <Reveal className="section-head">
             <span className="idx">01 / SOBRE</span>
-            <Eyebrow>Sobre StarLabs</Eyebrow>
+            <Eyebrow>Sobre AETHRON</Eyebrow>
             <h2>Las buenas ideas merecen convertirse en algo real</h2>
           </Reveal>
           <Reveal delay={100}>

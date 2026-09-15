@@ -9,7 +9,7 @@ export default function ContactoView() {
   return (
     <>
       <Meta
-        title="Contacto — StarLabs"
+        title="Contacto — AETHRON"
         description="Cuéntanos tu idea. No necesitas tenerlo todo claro, empecemos por lo que tienes."
       />
       <div className="page-hero-block">
@@ -30,8 +30,8 @@ export default function ContactoView() {
               </Reveal>
               <Reveal delay={100} className="contact-direct">
                 <Eyebrow>¿Prefieres hablar directamente?</Eyebrow>
-                <a href="mailto:hola@starlabs.dev" className="val">
-                  hola@starlabs.dev
+                <a href="mailto:hola@aethron.io" className="val">
+                  hola@aethron.io
                 </a>
                 <span className="contact-direct-location">La Paz, Bolivia</span>
               </Reveal>
