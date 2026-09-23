@@ -43,9 +43,11 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "kolla",
     name: "KOLLA",
     pitch: "Lee y escribe historias por capítulos, junto a una comunidad de autores en español.",
-    statusLabel: "Muy pronto",
-    status: "soon",
+    statusLabel: "Acceso anticipado",
+    status: "live",
     accent: "blue",
+    caseStudySlug: "kolla",
+    appUrl: "https://kolla-beryl.vercel.app/",
   },
   {
     slug: "scriptlib",

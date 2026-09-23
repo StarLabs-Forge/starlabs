@@ -52,4 +52,34 @@ export const caseStudies: CaseStudy[] = [
     closingNote:
       "CHECK opera como producto independiente, con su propio modelo de negocio y sitio. Diseñamos y construimos su arquitectura, backend y aplicaciones, y seguimos acompañando su operación.",
   },
+  {
+    slug: "kolla",
+    name: "KOLLA",
+    eyebrowLabel: "Caso en desarrollo — Lectura y escritura",
+    role: "Arquitectura · Backend · Base de datos · Frontend web",
+    category: ["Producto", "Apps"],
+    statusLabel: "ACCESO ANTICIPADO",
+    problem:
+      "Los autores independientes de habla hispana no tienen un espacio propio para publicar historias por capítulos y construir audiencia — las plataformas dominantes de lectura seriada están pensadas para el mercado angloparlante, sin foco en descubrimiento ni en la experiencia del autor hispanohablante.",
+    solution:
+      "Una plataforma de lectura y escritura seriada diseñada desde cero para el mercado hispanohablante: los autores publican capítulo a capítulo con control total sobre sus borradores, y los lectores descubren historias nuevas y siguen su progreso de lectura.",
+    modules: [
+      "Gestión de historias y capítulos",
+      "Borradores con visibilidad restringida al autor (RLS)",
+      "Catálogo y descubrimiento de contenido",
+      "Biblioteca personal y progreso de lectura",
+      "Perfil de autor",
+    ],
+    stack: [
+      "Next.js + React + TypeScript",
+      "Supabase Auth + Storage",
+      "PostgreSQL con Row Level Security",
+    ],
+    metrics: [
+      { value: "3", label: "roles: lector, autor y administrador" },
+      { value: "RLS", label: "capítulos no publicados, visibles solo para su autor" },
+    ],
+    closingNote:
+      "KOLLA está en acceso anticipado: la base funcional ya está publicada y disponible por link, mientras seguimos puliendo la experiencia de lectura y escritura antes del lanzamiento público.",
+  },
 ];
