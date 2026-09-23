@@ -1,20 +1,27 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { CaseStudy } from "../cases/CaseStudy";
+import { ClientCase } from "../cases/ClientCase";
 import type { CaseStudy as CaseStudyData } from "../../data/caseStudies";
+import type { ClientCase as ClientCaseData } from "../../data/clientCases";
 import "./CaseModal.css";
 
 // Ventana con el detalle completo que antes vivía suelto en la página de
-// portafolio (problema/solución/módulos/stack/métricas) — ahora solo aparece
-// cuando alguien pide explícitamente "Ver más" desde <ProjectCard>. Cierra con
-// Escape, click en el overlay, o el botón X; bloquea el scroll del body
-// mientras está abierto.
+// portafolio — ahora solo aparece cuando alguien pide explícitamente "Ver
+// más" desde <ProjectCard>. Cierra con Escape, click en el overlay, o el
+// botón X; bloquea el scroll del body mientras está abierto.
+// Acepta EXACTAMENTE uno de los dos: `caseStudy` (producto propio, formato
+// técnico problema/solución/módulos/stack/métricas) o `clientCase` (trabajo
+// de cliente, formato liviano qué-pidió/qué-construimos/alcance/tiempo) — lo
+// decide quién llama según si el proyecto abierto tiene caseStudySlug o
+// clientCaseSlug (ver PortafolioView.tsx).
 interface CaseModalProps {
-  caseStudy: CaseStudyData;
+  caseStudy?: CaseStudyData;
+  clientCase?: ClientCaseData;
   onClose: () => void;
 }
 
-export function CaseModal({ caseStudy, onClose }: CaseModalProps) {
+export function CaseModal({ caseStudy, clientCase, onClose }: CaseModalProps) {
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") onClose();
@@ -36,7 +43,7 @@ export function CaseModal({ caseStudy, onClose }: CaseModalProps) {
         className="case-modal"
         role="dialog"
         aria-modal="true"
-        aria-label={`Detalle del proyecto ${caseStudy.name}`}
+        aria-label={`Detalle del proyecto ${caseStudy?.name ?? clientCase?.name ?? ""}`}
         onClick={(event) => event.stopPropagation()}
       >
         <button type="button" className="case-modal-close" onClick={onClose} aria-label="Cerrar">
@@ -45,7 +52,8 @@ export function CaseModal({ caseStudy, onClose }: CaseModalProps) {
           </svg>
         </button>
         <div className="case-modal-scroll">
-          <CaseStudy caseStudy={caseStudy} />
+          {caseStudy && <CaseStudy caseStudy={caseStudy} />}
+          {clientCase && <ClientCase clientCase={clientCase} />}
         </div>
       </div>
     </div>,

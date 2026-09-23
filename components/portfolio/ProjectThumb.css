@@ -52,3 +52,4 @@
 .accent-blue { --pthumb-accent: var(--blue); --pthumb-glow: rgba(40,123,255,0.18); }
 .accent-violet { --pthumb-accent: var(--violet); --pthumb-glow: rgba(118,87,255,0.18); }
 .accent-purple { --pthumb-accent: var(--purple); --pthumb-glow: rgba(168,85,247,0.18); }
+.accent-warm { --pthumb-accent: var(--warm-accent); --pthumb-glow: rgba(227,165,103,0.18); }

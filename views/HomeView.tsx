@@ -147,9 +147,9 @@ export default function HomeView() {
           <Reveal className="section-head">
             <span className="idx">04 / PORTAFOLIO</span>
             <Eyebrow>Portafolio</Eyebrow>
-            <h2>Ya construimos uno. Vienen cuatro más.</h2>
+            <h2>Ya construimos uno. Y seguimos sumando.</h2>
             <p style={{ color: "var(--text-500)", marginTop: 10 }}>
-              Un vistazo rápido a lo que StarLabs tiene en producción y en camino.
+              Un vistazo rápido a lo que AETHRON tiene en producción, en camino, y a lo que construimos para otros.
             </p>
           </Reveal>
           <Reveal delay={100}>

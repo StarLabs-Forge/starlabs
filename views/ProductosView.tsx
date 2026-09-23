@@ -19,12 +19,18 @@ import "./styles/PortafolioView.css";
 export default function ProductosView() {
   const [openSlug, setOpenSlug] = useState<string | null>(null);
 
-  const openProject = portfolioProjects.find((p) => p.slug === openSlug);
+  // Solo kind:"product" — esta página es explícitamente "no es trabajo para
+  // clientes" (ver comentario de arriba), así que no puede reusar la lista
+  // completa de portfolioProjects sin filtrar, o mostraría encargos de
+  // clientes (p. ej. Aura Tumbler) como si fueran ideas propias de AETHRON.
+  const ownProducts = portfolioProjects.filter((p) => p.kind === "product");
+
+  const openProject = ownProducts.find((p) => p.slug === openSlug);
   const openCaseStudy = openProject?.caseStudySlug
     ? caseStudies.find((c) => c.slug === openProject.caseStudySlug)
     : undefined;
 
-  const hasProducts = portfolioProjects.length > 0;
+  const hasProducts = ownProducts.length > 0;
 
   return (
     <>
@@ -58,7 +64,7 @@ export default function ProductosView() {
             </Reveal>
 
             <div className="pgrid">
-              {portfolioProjects.map((project, index) => (
+              {ownProducts.map((project, index) => (
                 <Reveal key={project.slug} delay={index * 60}>
                   <ProjectCard project={project} onOpenDetail={setOpenSlug} />
                 </Reveal>

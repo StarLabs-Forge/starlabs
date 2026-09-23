@@ -12,3 +12,4 @@
 }
 .tag.on { color: var(--ok); border-color: rgba(126,168,136,0.35); }
 .tag.beta { color: var(--accent); border-color: rgba(32,217,255,0.35); }
+.tag.client { color: var(--warm-accent); border-color: rgba(227,165,103,0.35); }

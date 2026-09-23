@@ -15,7 +15,8 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, onOpenDetail }: ProjectCardProps) {
   const isSoon = project.status === "soon";
-  const canOpenDetail = !isSoon && Boolean(project.caseStudySlug);
+  const isClient = project.kind === "client";
+  const canOpenDetail = !isSoon && Boolean(project.caseStudySlug || project.clientCaseSlug);
 
   return (
     <div className={`pcard${isSoon ? " pcard-soon" : ""}`}>
@@ -35,7 +36,7 @@ export function ProjectCard({ project, onOpenDetail }: ProjectCardProps) {
       <div className="pcard-body">
         <div className="pcard-head">
           <h3>{project.name}</h3>
-          <Tag variant={isSoon ? "beta" : "on"}>{project.statusLabel}</Tag>
+          <Tag variant={isSoon ? "beta" : isClient ? "client" : "on"}>{project.statusLabel}</Tag>
         </div>
 
         <p className="pcard-pitch">

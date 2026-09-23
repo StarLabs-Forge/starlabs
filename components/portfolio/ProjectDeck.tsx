@@ -6,13 +6,18 @@ import { portfolioProjects } from "../../data/portfolioProjects";
 import "./ProjectCard.css";
 import "./ProjectDeck.css";
 
-// Vitrina "deck" del Home: recorre los 5 productos de StarLabs en un
-// carrusel 3D tipo glass — es el tráiler, no la película. Muestra nombre +
-// una frase + estado, nunca el detalle técnico (eso vive en /portafolio,
-// que sigue siendo página propia). El nav del header manda "Portafolio" acá
-// (sección, no ruta) porque el sitio se presenta como landing de una sola
-// página; /portafolio queda para quien pide explícitamente profundizar.
-// Pendiente a futuro (no implementado): cuando StarLabs tenga video propio
+// Vitrina "deck" del Home: recorre TODOS los proyectos de AETHRON (productos
+// propios y trabajos para clientes) en un carrusel 3D tipo glass — es el
+// tráiler, no la película. Muestra nombre + una frase + estado, nunca el
+// detalle técnico (eso vive en /portafolio, que sigue siendo página propia).
+// No filtra por `kind`: a diferencia de /portafolio (que separa "Productos
+// propios" de "Trabajos para clientes" en dos secciones) y de /productos
+// (que solo muestra kind:"product"), acá todo entra mezclado a propósito —
+// es la vitrina general, no el catálogo curado. El nav del header manda
+// "Portafolio" acá (sección, no ruta) porque el sitio se presenta como
+// landing de una sola página; /portafolio queda para quien pide
+// explícitamente profundizar.
+// Pendiente a futuro (no implementado): cuando AETHRON tenga video propio
 // (canal YouTube/TikTok) explicando qué es CHECK, la tarjeta activa podría
 // llevar un botón "Ver video" tipo trailer sobre el thumb — dejar espacio
 // para eso al tocar este componente de nuevo.
@@ -66,7 +71,7 @@ export function ProjectDeck() {
         tabIndex={0}
         role="group"
         aria-roledescription="carrusel"
-        aria-label="Productos StarLabs"
+        aria-label="Proyectos AETHRON"
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
@@ -85,6 +90,7 @@ export function ProjectDeck() {
           const abs = Math.abs(offset);
           const isActive = offset === 0;
           const isSoon = project.status === "soon";
+          const isClient = project.kind === "client";
 
           const style: CSSProperties =
             abs > 2
@@ -128,7 +134,7 @@ export function ProjectDeck() {
               <div className="deck-card-body">
                 <div className="pcard-head">
                   <h3>{project.name}</h3>
-                  <Tag variant={isSoon ? "beta" : "on"}>{project.statusLabel}</Tag>
+                  <Tag variant={isSoon ? "beta" : isClient ? "client" : "on"}>{project.statusLabel}</Tag>
                 </div>
                 <p className="pcard-pitch">
                   {isSoon ? "Estamos construyendo esto — todavía no hay nada para mostrar." : project.pitch}
