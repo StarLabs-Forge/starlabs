@@ -8,8 +8,8 @@ export default function ServiciosView() {
   return (
     <>
       <Meta
-        title="Servicios — AETHRON"
-        description="Qué construimos en AETHRON: web, apps, sistemas y productos propios."
+        title="Servicios — VEXORA"
+        description="Qué construimos en VEXORA: web, apps, sistemas y productos propios."
       />
       <div className="page-hero-block">
         <Hero

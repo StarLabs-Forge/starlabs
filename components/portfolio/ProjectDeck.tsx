@@ -6,7 +6,7 @@ import { portfolioProjects } from "../../data/portfolioProjects";
 import "./ProjectCard.css";
 import "./ProjectDeck.css";
 
-// Vitrina "deck" del Home: recorre TODOS los proyectos de AETHRON (productos
+// Vitrina "deck" del Home: recorre TODOS los proyectos de VEXORA (productos
 // propios y trabajos para clientes) en un carrusel 3D tipo glass — es el
 // tráiler, no la película. Muestra nombre + una frase + estado, nunca el
 // detalle técnico (eso vive en /portafolio, que sigue siendo página propia).
@@ -17,7 +17,7 @@ import "./ProjectDeck.css";
 // "Portafolio" acá (sección, no ruta) porque el sitio se presenta como
 // landing de una sola página; /portafolio queda para quien pide
 // explícitamente profundizar.
-// Pendiente a futuro (no implementado): cuando AETHRON tenga video propio
+// Pendiente a futuro (no implementado): cuando VEXORA tenga video propio
 // (canal YouTube/TikTok) explicando qué es CHECK, la tarjeta activa podría
 // llevar un botón "Ver video" tipo trailer sobre el thumb — dejar espacio
 // para eso al tocar este componente de nuevo.
@@ -71,7 +71,7 @@ export function ProjectDeck() {
         tabIndex={0}
         role="group"
         aria-roledescription="carrusel"
-        aria-label="Proyectos AETHRON"
+        aria-label="Proyectos VEXORA"
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}

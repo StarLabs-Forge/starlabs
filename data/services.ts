@@ -1,4 +1,4 @@
-// Las cuatro cosas que AETHRON construye — mismas categorías que la fila del
+// Las cuatro cosas que VEXORA construye — mismas categorías que la fila del
 // Hero ("Web · Apps · Sistemas · Productos propios"). Fuente única para el
 // resumen en Home, para /servicios y para el footer, evita que diverjan en
 // texto o en el link al que apuntan.
@@ -38,7 +38,7 @@ export const services: Service[] = [
     id: "productos",
     name: "Productos propios",
     hook: "Nuestras ideas, hechas realidad.",
-    description: "Productos y proyectos que nacen dentro de AETHRON.",
+    description: "Productos y proyectos que nacen dentro de VEXORA.",
     path: "/productos",
   },
 ];

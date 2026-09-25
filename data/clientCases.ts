@@ -1,6 +1,6 @@
-// Casos de trabajo para clientes (StarLabs Web) — formato liviano, DISTINTO
+// Casos de trabajo para clientes (VEXORA Web) — formato liviano, DISTINTO
 // del caso técnico de caseStudies.ts (que es para productos propios de
-// AETHRON: problema/solución/módulos/stack/métricas de arquitectura). Acá el
+// VEXORA: problema/solución/módulos/stack/métricas de arquitectura). Acá el
 // foco es el encargo real: qué pidió el cliente, qué se construyó, el
 // alcance entregado y el tiempo — sin simular una arquitectura que un
 // landing de cliente no tiene. Consumido por <ClientCase> vía <CaseModal>.
@@ -22,7 +22,7 @@ export const clientCases: ClientCase[] = [
   {
     slug: "aura-tumbler",
     name: "Aura Tumbler",
-    eyebrowLabel: "Trabajo para cliente — StarLabs Web",
+    eyebrowLabel: "Trabajo para cliente — VEXORA Web",
     role: "Landing de venta",
     statusLabel: "ENTREGADO",
     request:
@@ -38,6 +38,6 @@ export const clientCases: ClientCase[] = [
     timeline: "Entregado en una sola iteración, sobre un requerimiento cerrado.",
     liveUrl: "https://venta-producto.vercel.app/",
     closingNote:
-      "Encargo puntual de StarLabs Web — diseñado y construido a medida para un tercero, fuera del roadmap de productos propios de AETHRON.",
+      "Encargo puntual de VEXORA Web — diseñado y construido a medida para un tercero, fuera del roadmap de productos propios de VEXORA.",
   },
 ];

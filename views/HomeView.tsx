@@ -60,8 +60,8 @@ export default function HomeView() {
   return (
     <>
       <Meta
-        title="AETHRON — ¿Tienes una idea? Hagámosla realidad"
-        description="AETHRON crea contigo páginas web, aplicaciones y sistemas que convierten tus ideas en algo real y que funciona."
+        title="VEXORA — ¿Tienes una idea? Hagámosla realidad"
+        description="VEXORA crea contigo páginas web, aplicaciones y sistemas que convierten tus ideas en algo real y que funciona."
       />
       <Hero
         title={
@@ -96,7 +96,7 @@ export default function HomeView() {
         <div className="wrap">
           <Reveal className="section-head">
             <span className="idx">01 / SOBRE</span>
-            <Eyebrow>Sobre AETHRON</Eyebrow>
+            <Eyebrow>Sobre VEXORA</Eyebrow>
             <h2>Las buenas ideas merecen convertirse en algo real</h2>
           </Reveal>
           <Reveal delay={100}>
@@ -149,7 +149,7 @@ export default function HomeView() {
             <Eyebrow>Portafolio</Eyebrow>
             <h2>Ya construimos uno. Y seguimos sumando.</h2>
             <p style={{ color: "var(--text-500)", marginTop: 10 }}>
-              Un vistazo rápido a lo que AETHRON tiene en producción, en camino, y a lo que construimos para otros.
+              Un vistazo rápido a lo que VEXORA tiene en producción, en camino, y a lo que construimos para otros.
             </p>
           </Reveal>
           <Reveal delay={100}>

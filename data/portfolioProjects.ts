@@ -13,7 +13,7 @@ export interface PortfolioProject {
   statusLabel: string;
   status: "live" | "soon";
   accent: ProjectAccent;
-  // "product": idea propia de AETHRON, nace sin encargo de nadie.
+  // "product": idea propia de VEXORA, nace sin encargo de nadie.
   // "client": trabajo hecho para un tercero (StarLabs Web / servicios).
   // Separa qué entra en /productos (solo "product") de la sección
   // "Trabajos para clientes" de /portafolio.
