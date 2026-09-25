@@ -10,7 +10,7 @@ const detail = serviceDetails.web;
 export default function ServicioWebView() {
   return (
     <>
-      <Meta title={`${detail.title} — StarLabs`} description={detail.lead} />
+      <Meta title={`${detail.title} — Vexora`} description={detail.lead} />
       <div className="page-hero-block">
         <Hero
           eyebrow={detail.eyebrow}

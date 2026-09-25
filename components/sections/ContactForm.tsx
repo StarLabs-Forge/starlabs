@@ -12,7 +12,7 @@ type Status = "idle" | "sending" | "sent" | "error";
 //   - Con VITE_CONTACT_ENDPOINT definido: hace POST del lead y la persona no
 //     sale del sitio. Es el modo que queremos en producción.
 //   - Sin ella: arma un mailto: con lo que escribió, como hasta ahora. Así el
-//     mensaje llega de verdad a hola@starlabs.dev en vez de prometer un envío
+//     mensaje llega de verdad a hola@vexora.dev en vez de prometer un envío
 //     que no existe.
 //
 // El endpoint es un servicio de formularios o una API propia; lo único que
@@ -27,9 +27,9 @@ export function ContactForm() {
     event.preventDefault();
 
     if (!ENDPOINT) {
-      const subject = `Idea desde starlabs.dev — ${interest}`;
+      const subject = `Idea desde vexora.dev — ${interest}`;
       const body = `Nombre: ${name}\nCorreo: ${email}\nQué tiene en mente: ${interest}`;
-      window.location.href = `mailto:hola@starlabs.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = `mailto:hola@vexora.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       return;
     }
 
@@ -38,7 +38,7 @@ export function ContactForm() {
       const response = await fetch(ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ name, email, interest, source: "starlabs.dev/contacto" }),
+        body: JSON.stringify({ name, email, interest, source: "vexora.dev/contacto" }),
       });
       if (!response.ok) throw new Error(`El servidor respondió ${response.status}`);
       setStatus("sent");
@@ -104,7 +104,7 @@ export function ContactForm() {
       {status === "error" && (
         <p className="contact-form-error" role="alert">
           No pudimos enviar el mensaje. Escríbenos a{" "}
-          <a href="mailto:hola@starlabs.dev">hola@starlabs.dev</a>.
+          <a href="mailto:hola@vexora.dev">hola@vexora.dev</a>.
         </p>
       )}
     </form>

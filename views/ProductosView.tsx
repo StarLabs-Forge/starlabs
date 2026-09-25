@@ -12,7 +12,7 @@ import "../components/sections/ServiceDetail.css";
 import "./styles/PortafolioView.css";
 
 // A diferencia de /servicios/*, esta página no habla de trabajo para
-// clientes: es el lado de StarLabs que investiga problemas propios y los
+// clientes: es el lado de Vexora que investiga problemas propios y los
 // convierte en productos propios. Reutiliza la misma lista y la misma
 // <ProjectCard> que /portafolio — agregar un producto nuevo es agregar una
 // entrada en data/portfolioProjects.ts, no rediseñar esta página.

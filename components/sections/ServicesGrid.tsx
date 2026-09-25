@@ -70,7 +70,7 @@ function ServiceCard({ id, name, hook, description, path, index }: (typeof servi
   );
 }
 
-// Las cuatro cosas que StarLabs construye — usado en Home y en /servicios,
+// Las cuatro cosas que Vexora construye — usado en Home y en /servicios,
 // misma fuente que la fila de categorías del Hero. Stagger propio (no depende
 // del <Reveal> que envuelve la sección) para que Web → Apps → Sistemas →
 // Productos propios entren en secuencia corta.

@@ -29,7 +29,7 @@ export const serviceDetails: Record<ServiceDetail["id"], ServiceDetail> = {
     title: "Sitios y experiencias web que sí funcionan",
     lead: "Desde una página corporativa hasta una plataforma web completa — construimos lo que tu proyecto necesita, no una plantilla genérica.",
     intro:
-      "En StarLabs Web trabajamos el sitio como lo que es: la primera prueba real de que tu proyecto funciona. Eso puede ser una página corporativa que transmita confianza, una landing pensada para convertir, o una plataforma con lógica propia — paneles, contenido dinámico, autenticación. El problema que resolvemos no es \"no tener página web\": es tener una que no representa lo que estás construyendo, o que no hace nada por ti más allá de existir.",
+      "En Vexora Web trabajamos el sitio como lo que es: la primera prueba real de que tu proyecto funciona. Eso puede ser una página corporativa que transmita confianza, una landing pensada para convertir, o una plataforma con lógica propia — paneles, contenido dinámico, autenticación. El problema que resolvemos no es \"no tener página web\": es tener una que no representa lo que estás construyendo, o que no hace nada por ti más allá de existir.",
     featuresLabel: "Qué construimos",
     features: [
       {
@@ -61,7 +61,7 @@ export const serviceDetails: Record<ServiceDetail["id"], ServiceDetail> = {
     title: "Aplicaciones que resuelven problemas reales",
     lead: "Construimos productos digitales pensados desde la experiencia de quien los usa, no desde una lista de funciones.",
     intro:
-      "Una app no vale por la tecnología que usa, sino por el problema que le resuelve a quien la abre. En StarLabs Apps partimos de ahí: entendemos qué necesita lograr tu usuario y diseñamos la aplicación — móvil, con backend propio, conectada a otros sistemas — alrededor de eso. Cuando la idea todavía no está del todo probada, empezamos por un prototipo o un MVP: lo justo para validarla antes de invertir en construir de más.",
+      "Una app no vale por la tecnología que usa, sino por el problema que le resuelve a quien la abre. En Vexora Apps partimos de ahí: entendemos qué necesita lograr tu usuario y diseñamos la aplicación — móvil, con backend propio, conectada a otros sistemas — alrededor de eso. Cuando la idea todavía no está del todo probada, empezamos por un prototipo o un MVP: lo justo para validarla antes de invertir en construir de más.",
     featuresLabel: "Qué construimos",
     features: [
       {

@@ -1,4 +1,4 @@
-# StarLabs — Brand & Design System v1.1
+# Vexora — Brand & Design System v1.1
 
 > **Changelog v1.0 → v1.1:** v1.0 definía la paleta y las reglas de forma/motion en abstracto, pero el isotipo real seguía siendo un PNG generado por IA (glow permanente, bisel 3D, sin versión plana) que violaba la sección 7 de este mismo documento. Esta versión cierra esa brecha: define el isotipo final, sus reglas de uso concretas, y marca qué queda deprecado. Esta es ahora la **única fuente de verdad de marca** — ver nota de estado al final.
 
@@ -6,14 +6,14 @@
 
 ## 1. Arquitectura de marca
 
-StarLabs utiliza un sistema de identidad compuesto por tres variantes:
+Vexora utiliza un sistema de identidad compuesto por tres variantes:
 
 ### A. Logo completo
 Uso institucional y de alto impacto.
 
 Incluye:
 - Isotipo detallado (ver sección 1bis).
-- Wordmark STARLABS.
+- Wordmark VEXORA.
 - `BUILD · AUTOMATE · EVOLVE`.
 - `TECHNOLOGY FOR A BETTER TOMORROW`.
 
@@ -24,13 +24,13 @@ Identidad corporativa principal para el uso cotidiano.
 
 Incluye:
 - Isotipo (ver sección 1bis).
-- Wordmark STARLABS.
+- Wordmark VEXORA.
 - `TECNOLOGÍA · AUTOMATIZACIÓN · RESULTADOS`.
 
 **Usos:** web, productos, dashboards, documentación, redes, GitHub y material corporativo.
 
 ### C. Isotipo
-Símbolo independiente de StarLabs.
+Símbolo independiente de Vexora.
 
 **Usos:** favicon, app icon, avatar, loading states, botones de marca, productos y espacios reducidos.
 
@@ -38,7 +38,7 @@ Símbolo independiente de StarLabs.
 
 ## 1bis. El isotipo — definición final
 
-**Concepto:** una estrella de 8 facetas (triángulos, cada uno un tono distinto del degradado de marca — simula caras de cristal cortado, no un relleno plano) cuya punta inferior se resuelve en una **cola en S** — doble lectura: la estrella de "Star" y la inicial de "Labs" en el mismo trazo. Esto reemplaza cualquier lectura de "estrella genérica" por un símbolo que solo puede ser StarLabs.
+**Concepto:** una estrella de 8 facetas (triángulos, cada uno un tono distinto del degradado de marca — simula caras de cristal cortado, no un relleno plano) cuya punta inferior se resuelve en una **cola en S** — doble lectura: la estrella de "Star" y la inicial de "Labs" en el mismo trazo. Esto reemplaza cualquier lectura de "estrella genérica" por un símbolo que solo puede ser Vexora.
 
 **Por qué existe esta sección:** las primeras exploraciones (PNG generados por IA, `logo/ChatGPT Image *.png`) tenían la idea correcta pero la ejecución equivocada — glow permanente, bisel 3D dependiente de resolución, sin versión plana, no vectorial. Quedaron descartadas como asset final; se conservan solo como referencia histórica de dirección creativa.
 
@@ -53,7 +53,7 @@ Símbolo independiente de StarLabs.
 
 ## 1ter. Personalidad de marca
 
-**Lo que StarLabs debe transmitir, en este orden:**
+**Lo que Vexora debe transmitir, en este orden:**
 1. Confianza / seriedad técnica — la marca de un ingeniero, no de una agencia de humo.
 2. Innovación / vanguardia — que va adelante, se anima a probar cosas nuevas.
 3. Cercanía / accesibilidad — que hay una persona real detrás, no una corporación fría.
@@ -66,11 +66,11 @@ Símbolo independiente de StarLabs.
 
 ## 2. Modos de interfaz
 
-StarLabs tendrá dos modos oficiales:
+Vexora tendrá dos modos oficiales:
 
 ### DARK MODE
 
-El modo oscuro será la identidad visual predominante de StarLabs.
+El modo oscuro será la identidad visual predominante de Vexora.
 
 **Base:** `--bg-950: #050816` · `--bg-900: #0B1024` · `--bg-800: #111831` · `--bg-750: #171F3D` · `--line: #263158`
 
@@ -136,7 +136,7 @@ Múltiplos de 4: `4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96`.
 
 ## 6. Forma visual
 
-StarLabs utiliza:
+Vexora utiliza:
 - Bordes ligeramente redondeados (`--radius: 3px`, `--radius-lg: 6px` — no border-radius grande tipo SaaS).
 - Geometría limpia, contraste elevado, líneas finas.
 - Gradientes usados como acento — no en absolutamente todo.
@@ -150,13 +150,13 @@ StarLabs utiliza:
 - Interfaces saturadas.
 - Efectos 3D innecesarios.
 
-La estética debe sentirse: **futurista, pero profesional.** No queremos que StarLabs parezca una página de gaming de 2012.
+La estética debe sentirse: **futurista, pero profesional.** No queremos que Vexora parezca una página de gaming de 2012.
 
 ---
 
 ## 7. Iconografía
 
-Minimalista, geométrica, preferentemente outline, stroke consistente, sin exceso de detalle. El isotipo StarLabs es la referencia geométrica de toda la iconografía de marca.
+Minimalista, geométrica, preferentemente outline, stroke consistente, sin exceso de detalle. El isotipo Vexora es la referencia geométrica de toda la iconografía de marca.
 
 ---
 
@@ -231,13 +231,13 @@ Mobile / Tablet / Desktop / Wide Desktop. El logo completo no se usa cuando el e
 
 > **BUILD · AUTOMATE · EVOLVE**
 
-StarLabs no debe verse únicamente como una empresa "de tecnología". La identidad debe comunicar una empresa que **construye sistemas, automatiza procesos y evoluciona soluciones.**
+Vexora no debe verse únicamente como una empresa "de tecnología". La identidad debe comunicar una empresa que **construye sistemas, automatiza procesos y evoluciona soluciones.**
 
 ---
 
 ## 14. Estado de la documentación de marca (leer antes de tocar nada de branding)
 
-- **Este documento (`Brand & Design System v1.1`) es la única fuente de verdad de identidad visual de StarLabs.**
+- **Este documento (`Brand & Design System v1.1`) es la única fuente de verdad de identidad visual de Vexora.**
 - `docs/DESIGN_SYSTEM.md` (paleta bronze/warm, "ingeniero de sistemas, no agencia creativa") queda **deprecado** — describía una dirección de marca que el código ya no sigue desde que `tokens.css` migró a la paleta cyan/blue/violet/purple de este documento. Se conserva como archivo histórico, marcado con un aviso al inicio; no se sigue para trabajo nuevo.
 - `docs/MIGRATION_TO_NEXT.md` describe una migración a Next.js que **no es la que ocurrió** — el proyecto real es Vite + React Router (ver `ESTRUCTURA.md`, que sí es vigente). Queda marcado como histórico por la misma razón.
 - Cualquier logo, color o regla de forma que aparezca en un archivo no listado aquí como vigente (incluyendo cualquier PNG suelto en `logo/` o `assets/`) se considera exploración descartada, no especificación.

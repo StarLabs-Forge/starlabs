@@ -1,6 +1,6 @@
-# StarLabs — Estudio de Ingeniería de Producto
+# Vexora — Estudio de Ingeniería de Producto
 
-Sitio web de **StarLabs**, un estudio especializado en diseño y construcción de software real para negocios reales. Arquitectura, MVP y operación en producción.
+Sitio web de **Vexora**, un estudio especializado en diseño y construcción de software real para negocios reales. Arquitectura, MVP y operación en producción.
 
 ## 🚀 Tecnología
 
@@ -146,4 +146,4 @@ El proyecto está optimizado para desplegar en Vercel. Ver [`VERCEL_DEPLOYMENT_R
 
 ## 📄 Licencia
 
-Todos los derechos reservados © StarLabs
+Todos los derechos reservados © Vexora

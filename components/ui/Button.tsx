@@ -10,7 +10,7 @@ interface ButtonProps {
   showArrow?: boolean;
 }
 
-// Un href externo (otra app de StarLabs, un mailto, un subdominio) no puede
+// Un href externo (otra app de Vexora, un mailto, un subdominio) no puede
 // pasar por <Link>: React Router intentaría resolverlo como ruta interna y la
 // navegación se quedaría dentro de la SPA. Se detecta aquí para que quien use
 // <Button> no tenga que pensarlo.

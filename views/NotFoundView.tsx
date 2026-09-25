@@ -10,7 +10,7 @@ import "./styles/NotFoundView.css";
 export default function NotFoundView() {
   return (
     <section className="notfound gridlines">
-      <Meta title="Página no encontrada — StarLabs" description="Esta página no existe o se movió de lugar." />
+      <Meta title="Página no encontrada — Vexora" description="Esta página no existe o se movió de lugar." />
       <span className="notfound-digits" aria-hidden="true">404</span>
       <div className="wrap">
         <div className="notfound-body">

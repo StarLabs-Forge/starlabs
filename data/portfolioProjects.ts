@@ -1,4 +1,4 @@
-// Lista liviana para el grid de /portafolio (una card por proyecto StarLabs,
+// Lista liviana para el grid de /portafolio (una card por proyecto Vexora,
 // en lenguaje simple orientado a quien va a USAR el producto, no a quien lo
 // construyó). El detalle técnico completo vive en data/caseStudies.ts y solo
 // se muestra si el proyecto tiene caseStudySlug — ahí lo abre <CaseModal>.
@@ -14,7 +14,7 @@ export interface PortfolioProject {
   status: "live" | "soon";
   accent: ProjectAccent;
   // "product": idea propia de VEXORA, nace sin encargo de nadie.
-  // "client": trabajo hecho para un tercero (StarLabs Web / servicios).
+  // "client": trabajo hecho para un tercero (Vexora Web / servicios).
   // Separa qué entra en /productos (solo "product") de la sección
   // "Trabajos para clientes" de /portafolio.
   kind: "product" | "client";

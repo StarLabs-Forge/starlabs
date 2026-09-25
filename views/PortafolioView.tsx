@@ -15,7 +15,7 @@ import "./styles/PortafolioView.css";
 // interesa sumarse. El detalle técnico completo (antes suelto en la página)
 // ahora vive solo dentro de <CaseModal>, detrás de "Ver más".
 // Separa "Productos propios" (kind:"product", ideas de VEXORA) de "Trabajos
-// para clientes" (kind:"client", encargos de StarLabs Web) en dos secciones:
+// para clientes" (kind:"client", encargos de Vexora Web) en dos secciones:
 // mismo <ProjectCard>, pero nunca en la misma grilla.
 export default function PortafolioView() {
   const [openSlug, setOpenSlug] = useState<string | null>(null);
@@ -65,7 +65,7 @@ export default function PortafolioView() {
                 <Eyebrow>Trabajos para clientes</Eyebrow>
                 <h2>También construimos para otros</h2>
                 <p style={{ color: "var(--text-500)", marginTop: 10 }}>
-                  Encargos reales de StarLabs Web — sitios y landings que diseñamos y desarrollamos para terceros.
+                  Encargos reales de Vexora Web — sitios y landings que diseñamos y desarrollamos para terceros.
                 </p>
               </Reveal>
               <div className="pgrid">
